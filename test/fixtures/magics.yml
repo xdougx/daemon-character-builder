@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  know: 1
+  make: 1
+  handle: 1
+  fire: 1
+  water: 1
+  earth: 1
+  air: 1
+  light: 1
+  dark: 1
+  plants: 1
+  animals: 1
+  human: 1
+  dead: 1
+  extra_planar: 1
+  meta_magic: 1
+
+two:
+  know: 1
+  make: 1
+  handle: 1
+  fire: 1
+  water: 1
+  earth: 1
+  air: 1
+  light: 1
+  dark: 1
+  plants: 1
+  animals: 1
+  human: 1
+  dead: 1
+  extra_planar: 1
+  meta_magic: 1

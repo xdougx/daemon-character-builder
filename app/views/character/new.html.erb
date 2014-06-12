@@ -1,0 +1,340 @@
+<div class="container">
+	<%= form_tag '/characters', role: 'form' do |f| %>
+    <div class="col-lg-12">
+      <h4>Criar Novo Personagem</h4>	
+    </div>
+    
+    <div class="row">
+
+      <div class="col-lg-6">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Dados do Personagem</h3>
+          </div>
+          <div class="panel-body">
+            <div class="form-group">
+              <label for="name">Nome do Personagem</label>
+              <%= text_field_tag "character[name]", nil, class: "form-control", placeholder: "Leona Luna" %>
+            </div>
+
+            <div class="form-group">
+              <label for="race">Raça</label>
+              <%= text_field_tag "character[race]", nil, class: "form-control", placeholder: "Elfo" %>
+            </div>
+
+            <div class="form-group">
+              <label for="class">Classe</label>
+              <%= text_field_tag "character[class]", nil, class: "form-control", placeholder: "Lutador" %>
+            </div>
+
+            <div class="form-group">
+              <label for="profession">Profissão</label>
+              <%= text_field_tag "character[profession]", nil, class: "form-control", placeholder: "Ferreiro" %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Info</h3>
+          </div>
+                  
+          <div class="panel-body">
+
+            <p><strong>Level</strong></p>
+            
+            <div class="form-group">
+              <div class="row">
+                <div class="col-xs-6 col-md-6">
+                  <%= text_field_tag "character[level]", nil, class: "form-control", placeholder: "Nivel" %>
+                </div>
+
+                <div class="col-xs-6 col-md-6">
+                  <%= text_field_tag "character[experience]", nil, class: "form-control", placeholder: "Experiencia" %>
+                </div>
+
+              </div>
+            </div>
+
+            <p><strong>Dinheiro</strong></p>
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col-xs-4 col-md-4">
+                  <%= text_field_tag "character[gold]", nil, class: "form-control", placeholder: "Ouro" %>
+                </div>
+
+                <div class="col-xs-4 col-md-4">
+                  <%= text_field_tag "character[silver]", nil, class: "form-control", placeholder: "Prata" %>
+                </div>
+
+                <div class="col-xs-4 col-md-4">
+                  <%= text_field_tag "character[cooper]", nil, class: "form-control", placeholder: "Cobre" %>
+                </div>
+              </div>
+            </div>
+        
+            <p><strong>Status</strong></p>
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col-xs-4 col-md-4">
+                  <%= text_field_tag "character[health_points]", nil, class: "form-control", placeholder: "PV" %>
+                </div>
+
+                <div class="col-xs-4 col-md-4">
+                  <%= text_field_tag "character[index_protection]", nil, class: "form-control", placeholder: "IP" %>
+                </div>
+
+                <div class="col-xs-4 col-md-4">
+                  <%= text_field_tag "character[hero_points]", nil, class: "form-control", placeholder: "PH" %>
+                </div>
+              </div>
+
+              <div class="row">&nbsp;</div>
+              
+              <div class="row">
+                <div class="col-xs-4 col-md-4">
+                  <%= text_field_tag "character[magic_points]", nil, class: "form-control", placeholder: "PM" %>
+                </div>
+
+                <div class="col-xs-4 col-md-4">
+                  <%= text_field_tag "character[focus_points]", nil, class: "form-control", placeholder: "PF" %>
+                </div>
+
+                <div class="col-xs-4 col-md-4">
+                  <%= text_field_tag "character[magical_aptitude]", nil, class: "form-control", placeholder: "AM" %>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Attributos (101)</h3>
+          </div>
+          <div class="panel-body">
+
+            <h5>Constituição (CON)</h5>
+
+            <div class="row">
+              <div class="form-group">
+                <div class="col-xs-4 col-md-4">
+                  <%= text_field_tag "attributes[0][base]", nil, class: "form-control", placeholder: "Base" %>
+                </div>
+                <div class="col-xs-4 col-md-4">
+                  <%= text_field_tag "attributes[0][modifier]", nil, class: "form-control", placeholder: "Mod" %>
+                </div>
+                <div class="col-xs-4 col-md-4">
+                  <%= text_field_tag "attributes[0][bonus]", nil, class: "form-control", placeholder: "Bonus" %>
+                </div>
+                <%= hidden_field_tag "attributes[0][name]", "Constituição" %>
+              </div>
+            </div> 
+
+            <h5>Força (FR)</h5>
+
+            <div class="row">
+              <div class="form-group">
+                <div class="col-xs-4 col-md-4">
+                  <%= text_field_tag "attributes[0][base]", nil, class: "form-control", placeholder: "Base" %>
+                </div>
+                <div class="col-xs-4 col-md-4">
+                  <%= text_field_tag "attributes[0][modifier]", nil, class: "form-control", placeholder: "Mod" %>
+                </div>
+                <div class="col-xs-4 col-md-4">
+                  <%= text_field_tag "attributes[0][bonus]", nil, class: "form-control", placeholder: "Bonus" %>
+                </div>
+                <%= hidden_field_tag "attributes[0][name]", "Força" %>
+              </div>
+            </div> 
+
+            <h5>Destreza (DEX)</h5>
+
+            <div class="row">
+              <div class="form-group">
+                <div class="col-xs-4 col-md-4">
+                  <%= text_field_tag "attributes[0][base]", nil, class: "form-control", placeholder: "Base" %>
+                </div>
+                <div class="col-xs-4 col-md-4">
+                  <%= text_field_tag "attributes[0][modifier]", nil, class: "form-control", placeholder: "Mod" %>
+                </div>
+                <div class="col-xs-4 col-md-4">
+                  <%= text_field_tag "attributes[0][bonus]", nil, class: "form-control", placeholder: "Bonus" %>
+                </div>
+                <%= hidden_field_tag "attributes[0][name]", "Destreza" %>
+              </div>
+            </div> 
+
+            <h5>Agilidade (AGI)</h5>
+
+            <div class="row">
+              <div class="form-group">
+                <div class="col-xs-4 col-md-4">
+                  <%= text_field_tag "attributes[0][base]", nil, class: "form-control", placeholder: "Base" %>
+                </div>
+                <div class="col-xs-4 col-md-4">
+                  <%= text_field_tag "attributes[0][modifier]", nil, class: "form-control", placeholder: "Mod" %>
+                </div>
+                <div class="col-xs-4 col-md-4">
+                  <%= text_field_tag "attributes[0][bonus]", nil, class: "form-control", placeholder: "Bonus" %>
+                </div>
+                <%= hidden_field_tag "attributes[0][name]", "Destreza" %>
+              </div>
+            </div> 
+
+            <h5>Inteligência (INT)</h5>
+
+            <div class="row">
+              <div class="form-group">
+                <div class="col-xs-4 col-md-4">
+                  <%= text_field_tag "attributes[0][base]", nil, class: "form-control", placeholder: "Base" %>
+                </div>
+                <div class="col-xs-4 col-md-4">
+                  <%= text_field_tag "attributes[0][modifier]", nil, class: "form-control", placeholder: "Mod" %>
+                </div>
+                <div class="col-xs-4 col-md-4">
+                  <%= text_field_tag "attributes[0][bonus]", nil, class: "form-control", placeholder: "Bonus" %>
+                </div>
+                <%= hidden_field_tag "attributes[0][name]", "Inteligência" %>
+              </div>
+            </div>
+
+            <h5>Força de Vontade (WILL)</h5>
+
+            <div class="row">
+              <div class="form-group">
+                <div class="col-xs-4 col-md-4">
+                  <%= text_field_tag "attributes[0][base]", nil, class: "form-control", placeholder: "Base" %>
+                </div>
+                <div class="col-xs-4 col-md-4">
+                  <%= text_field_tag "attributes[0][modifier]", nil, class: "form-control", placeholder: "Mod" %>
+                </div>
+                <div class="col-xs-4 col-md-4">
+                  <%= text_field_tag "attributes[0][bonus]", nil, class: "form-control", placeholder: "Bonus" %>
+                </div>
+                <%= hidden_field_tag "attributes[0][name]", "Força de Vontade" %>
+              </div>
+            </div> 
+
+            <h5>Percepção (PER)</h5>
+
+            <div class="row">
+              <div class="form-group">
+                <div class="col-xs-4 col-md-4">
+                  <%= text_field_tag "attributes[0][base]", nil, class: "form-control", placeholder: "Base" %>
+                </div>
+                <div class="col-xs-4 col-md-4">
+                  <%= text_field_tag "attributes[0][modifier]", nil, class: "form-control", placeholder: "Mod" %>
+                </div>
+                <div class="col-xs-4 col-md-4">
+                  <%= text_field_tag "attributes[0][bonus]", nil, class: "form-control", placeholder: "Bonus" %>
+                </div>
+                <%= hidden_field_tag "attributes[0][name]", "Percepção" %>
+              </div>
+            </div> 
+
+            <h5>Carisma (CAR)</h5>
+
+            <div class="row">
+              <div class="form-group">
+                <div class="col-xs-4 col-md-4">
+                  <%= text_field_tag "attributes[0][base]", nil, class: "form-control", placeholder: "Base" %>
+                </div>
+                <div class="col-xs-4 col-md-4">
+                  <%= text_field_tag "attributes[0][modifier]", nil, class: "form-control", placeholder: "Mod" %>
+                </div>
+                <div class="col-xs-4 col-md-4">
+                  <%= text_field_tag "attributes[0][bonus]", nil, class: "form-control", placeholder: "Bonus" %>
+                </div>
+                <%= hidden_field_tag "attributes[0][name]", "Carisma" %>
+              </div>
+            </div> 
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Aprimoramentos Positivo</h3>
+          </div>
+          <div class="panel-body">
+            <div id="improvements">
+              <div class="container_improvement" count="0">
+                <div class="form-group">
+                  <label for="improvements[0][name]">Aprimoramento</label>
+                  <%= text_field_tag "improvements[0][name]", nil, class: "form-control", placeholder: "Ataque furtivo II" %>
+                </div>
+
+                <div class="form-group">
+                  <label for="improvements[0][description]">Efeito</label>
+                  <%= text_field_tag "improvements[0][description]", nil, class: "form-control", placeholder: "2d6 de dano ao atacar furtivamente" %>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <button class="btn btn-primary" id="add_improvement"><span class="glyphicon glyphicon-plus"></span> Adicionar Aprimoramento</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      
+    </div>
+
+	<% end %>
+
+</div>
+
+
+
+<script type="text/javascript">
+  $(function(){
+    $("#add_improvement").click(function(){
+      var new_improvement = $("#improvements .container_improvement").last().clone();
+      new_improvement = count_increment(new_improvement);
+
+      var count = $(new_improvement).attr("count");
+
+      $(new_improvement).find("input").each(function(){
+        this.name = this.name.replace(/[0-9]{1,2}/g, count);
+        this.value = "";
+      });
+
+      $(new_improvement).find("label").each(function(){
+        var _for = $(this).attr("for");
+         $(this).attr("for", _for.replace(/[0-9]{1,2}/g, count));
+      });
+
+      $("#improvements").append("<hr>");
+      $("#improvements").append(new_improvement);
+
+      return false;
+    });
+
+    function count_increment(improvement) {
+      var count = parseInt ( $(improvement).attr("count") );
+      $(improvement).attr("count", (count+1));
+
+      return improvement
+    }
+
+  });
+</script>
+
+

@@ -1,0 +1,45 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  player_id: 1
+  name: MyString
+  race_id: 1
+  class_id: 1
+  profession: MyString
+  gold: 1
+  silver: MyString
+  cooper: MyString
+  experience: 1
+  level: 1
+  health_points: 1
+  index_protection: 1
+  hero_points: 1
+  magic_points: 1
+  focues_points: 1
+  magical_aptitude: 1
+  load: 1
+  lifting: 1
+  speed: 1
+  power_bonus: 1
+
+two:
+  player_id: 1
+  name: MyString
+  race_id: 1
+  class_id: 1
+  profession: MyString
+  gold: 1
+  silver: MyString
+  cooper: MyString
+  experience: 1
+  level: 1
+  health_points: 1
+  index_protection: 1
+  hero_points: 1
+  magic_points: 1
+  focues_points: 1
+  magical_aptitude: 1
+  load: 1
+  lifting: 1
+  speed: 1
+  power_bonus: 1

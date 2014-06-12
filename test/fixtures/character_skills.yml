@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  skill_points: 1
+  bonus: 1
+  player_id: 1
+  skill_id: 1
+
+two:
+  skill_points: 1
+  bonus: 1
+  player_id: 1
+  skill_id: 1
