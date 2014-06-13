@@ -13,3 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require redactor.min
+//= require redactor_pt_br
+//= require redactor_fontcolor

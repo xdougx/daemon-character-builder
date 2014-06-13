@@ -11,5 +11,10 @@
  * file per style scope.
  *
  *= require bootstrap
+ *= require redactor
  *= require_self
  */
+
+.row_pad {
+	padding: 18px 0;
+}

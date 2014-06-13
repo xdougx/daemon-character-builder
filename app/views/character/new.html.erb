@@ -267,6 +267,101 @@
       <div class="col-lg-6">
         <div class="panel panel-primary">
           <div class="panel-heading">
+            <h3 class="panel-title">Magias</h3>
+          </div>
+
+          <div class="panel-body">
+            <p><strong>Formas</strong></p>
+
+            <div class="form-group">
+              <div class="row">
+
+                <div class="col-xs-4 col-md-4">
+                  <%= text_field_tag "magics[know]", nil, class: "form-control", placeholder: "Entender" %>
+                </div>
+
+                <div class="col-xs-4 col-md-4">
+                  <%= text_field_tag "character[make]", nil, class: "form-control", placeholder: "Criar" %>
+                </div>
+
+                <div class="col-xs-4 col-md-4">
+                  <%= text_field_tag "character[handle]", nil, class: "form-control", placeholder: "Controlar" %>
+                </div>
+              </div>
+            </div>
+
+            <p><strong>Caminhos</strong></p>
+
+            <div class="form-group">
+             <div class="row row_pad">
+                <div class="col-xs-6 col-md-6">
+                  <%= text_field_tag "magics[fire]", nil, class: "form-control", placeholder: "Fogo" %>
+                </div>
+
+                <div class="col-xs-6 col-md-6">
+                  <%= text_field_tag "character[plants]", nil, class: "form-control", placeholder: "Plantas" %>
+                </div>
+              </div>
+              
+              <div class="row row_pad">
+                <div class="col-xs-6 col-md-6">
+                  <%= text_field_tag "magics[water]", nil, class: "form-control", placeholder: "Água" %>
+                </div>
+
+                <div class="col-xs-6 col-md-6">
+                  <%= text_field_tag "character[animals]", nil, class: "form-control", placeholder: "Animais" %>
+                </div>
+              </div>
+              
+              <div class="row row_pad">
+                <div class="col-xs-6 col-md-6">
+                  <%= text_field_tag "magics[earth]", nil, class: "form-control", placeholder: "Terra" %>
+                </div>
+
+                <div class="col-xs-6 col-md-6">
+                  <%= text_field_tag "character[human]", nil, class: "form-control", placeholder: "Humanos" %>
+                </div>
+              </div>
+              
+              <div class="row row_pad">
+                <div class="col-xs-6 col-md-6">
+                  <%= text_field_tag "magics[air]", nil, class: "form-control", placeholder: "Ar" %>
+                </div>
+
+                <div class="col-xs-6 col-md-6">
+                  <%= text_field_tag "character[dead]", nil, class: "form-control", placeholder: "Mortos" %>
+                </div>
+              </div>
+              
+              <div class="row row_pad">
+                <div class="col-xs-6 col-md-6">
+                  <%= text_field_tag "magics[light]", nil, class: "form-control", placeholder: "Lux" %>
+                </div>
+
+                <div class="col-xs-6 col-md-6">
+                  <%= text_field_tag "character[extra_planar]", nil, class: "form-control", placeholder: "Extra-Planar" %>
+                </div>
+              </div>
+              
+              <div class="row row_pad">
+                <div class="col-xs-6 col-md-6">
+                  <%= text_field_tag "magics[dark]", nil, class: "form-control", placeholder: "Trevas" %>
+                </div>
+
+                <div class="col-xs-6 col-md-6">
+                  <%= text_field_tag "character[meta_planar]", nil, class: "form-control", placeholder: "Meta-Planar" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+       <div class="col-lg-6">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
             <h3 class="panel-title">Aprimoramentos Positivo</h3>
           </div>
           <div class="panel-body">
@@ -291,14 +386,102 @@
           </div>
         </div>
       </div>
+
+      <div class="col-lg-6">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Aprimoramentos Negativo</h3>
+          </div>
+          <div class="panel-body">
+            <div id="injuries">
+              <div class="container_injuries" count="0">
+                <div class="form-group">
+                  <label for="injuries[0][name]">Aprimoramento</label>
+                  <%= text_field_tag "injuries[0][name]", nil, class: "form-control", placeholder: "Fanatico" %>
+                </div>
+
+                <div class="form-group">
+                  <label for="injuries[0][description]">Efeito</label>
+                  <%= text_field_tag "injuries[0][description]", nil, class: "form-control", placeholder: "É fanatico em querer destruir planos de Ambaron" %>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <button class="btn btn-primary" id="add_injurie"><span class="glyphicon glyphicon-plus"></span> Adicionar Aprimoramento</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="row">
-      
+      <div class="col-lg-6">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Pericias com Armas</h3>
+          </div>
+          <div class="panel-body">
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Pericias</h3>
+          </div>
+          <div class="panel-body">
+            
+          </div>
+        </div>
+      </div>
+
     </div>
 
-	<% end %>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Armas</h3>
+          </div>
+          <div class="panel-body">
 
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Armaduras</h3>
+          </div>
+          <div class="panel-body">
+            
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">História</h3>
+          </div>
+          <div class="panel-body">
+            <textarea name="character[hiostory]" id="history" style="height: 100%;"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  <% end %>
 </div>
 
 
@@ -327,12 +510,39 @@
       return false;
     });
 
+    $("#add_injurie").click(function(){
+      var new_improvement = $("#injuries .container_injuries").last().clone();
+      new_improvement = count_increment(new_improvement);
+
+      var count = $(new_improvement).attr("count");
+
+      $(new_improvement).find("input").each(function(){
+        this.name = this.name.replace(/[0-9]{1,2}/g, count);
+        this.value = "";
+      });
+
+      $(new_improvement).find("label").each(function(){
+        var _for = $(this).attr("for");
+         $(this).attr("for", _for.replace(/[0-9]{1,2}/g, count));
+      });
+
+      $("#injuries").append("<hr>");
+      $("#injuries").append(new_improvement);
+
+      return false;
+    });
+
+
     function count_increment(improvement) {
       var count = parseInt ( $(improvement).attr("count") );
       $(improvement).attr("count", (count+1));
 
       return improvement
     }
+
+    $('#history').redactor({
+        toolbarFixedBox: true
+    });
 
   });
 </script>

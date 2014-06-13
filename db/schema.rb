@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140608022834) do
+ActiveRecord::Schema.define(version: 20140613010223) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,9 +57,20 @@ ActiveRecord::Schema.define(version: 20140608022834) do
     t.datetime "updated_at"
   end
 
+  create_table "character_waepon_skills", force: true do |t|
+    t.integer  "atack_skill_points"
+    t.integer  "defence_skill_points"
+    t.integer  "bonus"
+    t.integer  "player_id"
+    t.integer  "weapon_skill_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "characters", force: true do |t|
     t.integer  "player_id"
     t.string   "name"
+    t.text     "history"
     t.integer  "race_id"
     t.integer  "class_id"
     t.string   "profession"
@@ -126,6 +137,13 @@ ActiveRecord::Schema.define(version: 20140608022834) do
   end
 
   create_table "skills", force: true do |t|
+    t.string   "name"
+    t.string   "based_attribute"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "weapon_skills", force: true do |t|
     t.string   "name"
     t.string   "based_attribute"
     t.datetime "created_at"

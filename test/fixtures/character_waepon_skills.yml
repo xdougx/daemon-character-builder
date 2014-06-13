@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  atack_skill_points: 1
+  defence_skill_points: 1
+  bonus: 1
+  player_id: 1
+  weapon_skill_id: 1
+
+two:
+  atack_skill_points: 1
+  defence_skill_points: 1
+  bonus: 1
+  player_id: 1
+  weapon_skill_id: 1
