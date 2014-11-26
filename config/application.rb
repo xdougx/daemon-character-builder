@@ -8,6 +8,19 @@ Bundler.require(*Rails.groups)
 
 module RpgSystem
   class Application < Rails::Application
+    config.sass.preferred_syntax = :sass
+
+    config.autoload_paths += Dir["#{config.root}/lib/**/**/**/**"]
+    config.action_controller.include_all_helpers = true
+
+    config.time_zone = 'Brasilia'
+    config.i18n.default_locale = "pt-br"
+
+    config.filter_parameters += [:password]
+
+    config.encoding = "utf-8"
+
+    config.session_store :cookie_store, key: '_backoffice_octoplus'
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

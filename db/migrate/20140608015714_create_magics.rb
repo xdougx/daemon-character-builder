@@ -16,6 +16,7 @@ class CreateMagics < ActiveRecord::Migration
       t.integer :dead
       t.integer :extra_planar
       t.integer :meta_magic
+      t.integer :character_id
 
       t.timestamps
     end

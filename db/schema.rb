@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20140613010223) do
     t.integer  "base"
     t.integer  "modifier"
     t.integer  "bonus"
+    t.integer  "character_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -37,6 +38,8 @@ ActiveRecord::Schema.define(version: 20140613010223) do
   create_table "character_improvements", force: true do |t|
     t.integer  "character_id"
     t.integer  "improvement_id"
+    t.string   "name"
+    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -44,11 +47,15 @@ ActiveRecord::Schema.define(version: 20140613010223) do
   create_table "character_injuries", force: true do |t|
     t.integer  "character_id"
     t.integer  "injury_id"
+    t.string   "name"
+    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "character_skills", force: true do |t|
+    t.string   "name"
+    t.string   "attribute"
     t.integer  "skill_points"
     t.integer  "bonus"
     t.integer  "player_id"
@@ -57,7 +64,7 @@ ActiveRecord::Schema.define(version: 20140613010223) do
     t.datetime "updated_at"
   end
 
-  create_table "character_waepon_skills", force: true do |t|
+  create_table "character_weapon_skills", force: true do |t|
     t.integer  "atack_skill_points"
     t.integer  "defence_skill_points"
     t.integer  "bonus"
@@ -83,7 +90,7 @@ ActiveRecord::Schema.define(version: 20140613010223) do
     t.integer  "index_protection"
     t.integer  "hero_points"
     t.integer  "magic_points"
-    t.integer  "focues_points"
+    t.integer  "focus_points"
     t.integer  "magical_aptitude"
     t.integer  "load"
     t.integer  "lifting"
@@ -123,6 +130,7 @@ ActiveRecord::Schema.define(version: 20140613010223) do
     t.integer  "dead"
     t.integer  "extra_planar"
     t.integer  "meta_magic"
+    t.integer  "player_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

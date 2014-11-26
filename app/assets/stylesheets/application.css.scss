@@ -10,11 +10,32 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require bootstrap
  *= require redactor
  *= require_self
  */
 
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 .row_pad {
 	padding: 18px 0;
+}
+
+.box_elements_left {
+	text-align: center;
+	border: solid 1px #2F587B;
+	margin: 10px 0;
+	background-color: #337AB7;
+	color: #ffffff;
+	text-shadow: -1px 1px 3px #000;
+	border-radius: 5px;
+
+	p {
+		font-size: 50px;
+	}
+
+	p.small {
+		font-size:	40px;
+		line-height: 71px;
+	}
 }

@@ -1,6 +1,6 @@
-class CreateCharacterWaeponSkills < ActiveRecord::Migration
+class CreateCharacterWeaponSkills < ActiveRecord::Migration
   def change
-    create_table :character_waepon_skills do |t|
+    create_table :character_weapon_skills do |t|
       t.integer :atack_skill_points
       t.integer :defence_skill_points
       t.integer :bonus

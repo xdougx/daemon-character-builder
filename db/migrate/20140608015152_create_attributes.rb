@@ -5,6 +5,7 @@ class CreateAttributes < ActiveRecord::Migration
       t.integer :base
       t.integer :modifier
       t.integer :bonus
+      t.integer :character_id
 
       t.timestamps
     end

@@ -13,6 +13,15 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require redactor.min
-//= require redactor_pt_br
-//= require redactor_fontcolor
+
+//= require_tree ./utils
+//= require_tree ./controllers
+//= require_tree ./views
+
+//= require routes
+
+$(function(){
+	$daemon_routes.run()
+  // var app = new IApp
+	// app.addModules({"BackofficeModule": new BackofficeModule}).run()
+})

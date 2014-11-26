@@ -3,9 +3,27 @@
     <div class="col-lg-12">
       <h4>Criar Novo Personagem</h4>	
     </div>
-    
     <div class="row">
-
+      <div class="col-lg-4">
+        <div class="box_elements_left">
+          <h3>Attributos</h3>
+          <p id="attributes_left">101</p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="box_elements_left">
+          <h3>Aprimoramentos Positivos</h3>
+          <p id="improvements_left">5</p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="box_elements_left">
+          <h3>Perícias</h3>
+          <p id="skills_left" class="small">10xAge + 5xINT</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
       <div class="col-lg-6">
         <div class="panel panel-primary">
           <div class="panel-heading">
@@ -129,15 +147,15 @@
             <div class="row">
               <div class="form-group">
                 <div class="col-xs-4 col-md-4">
-                  <%= text_field_tag "attributes[0][base]", nil, class: "form-control", placeholder: "Base" %>
+                  <%= text_field_tag "character[attributes_attributes][0][base]", nil, class: "form-control", placeholder: "Base" %>
                 </div>
                 <div class="col-xs-4 col-md-4">
-                  <%= text_field_tag "attributes[0][modifier]", nil, class: "form-control", placeholder: "Mod" %>
+                  <%= text_field_tag "character[attributes_attributes][0][modifier]", nil, class: "form-control", placeholder: "Mod" %>
                 </div>
                 <div class="col-xs-4 col-md-4">
-                  <%= text_field_tag "attributes[0][bonus]", nil, class: "form-control", placeholder: "Bonus" %>
+                  <%= text_field_tag "character[attributes_attributes][0][bonus]", nil, class: "form-control", placeholder: "Bonus" %>
                 </div>
-                <%= hidden_field_tag "attributes[0][name]", "Constituição" %>
+                <%= hidden_field_tag "character[attributes_attributes][0][name]", "Constituição" %>
               </div>
             </div> 
 
@@ -146,15 +164,15 @@
             <div class="row">
               <div class="form-group">
                 <div class="col-xs-4 col-md-4">
-                  <%= text_field_tag "attributes[0][base]", nil, class: "form-control", placeholder: "Base" %>
+                  <%= text_field_tag "character[attributes_attributes][0][base]", nil, class: "form-control", placeholder: "Base" %>
                 </div>
                 <div class="col-xs-4 col-md-4">
-                  <%= text_field_tag "attributes[0][modifier]", nil, class: "form-control", placeholder: "Mod" %>
+                  <%= text_field_tag "character[attributes_attributes][0][modifier]", nil, class: "form-control", placeholder: "Mod" %>
                 </div>
                 <div class="col-xs-4 col-md-4">
-                  <%= text_field_tag "attributes[0][bonus]", nil, class: "form-control", placeholder: "Bonus" %>
+                  <%= text_field_tag "character[attributes_attributes][0][bonus]", nil, class: "form-control", placeholder: "Bonus" %>
                 </div>
-                <%= hidden_field_tag "attributes[0][name]", "Força" %>
+                <%= hidden_field_tag "character[attributes_attributes][0][name]", "Força" %>
               </div>
             </div> 
 
@@ -163,15 +181,15 @@
             <div class="row">
               <div class="form-group">
                 <div class="col-xs-4 col-md-4">
-                  <%= text_field_tag "attributes[0][base]", nil, class: "form-control", placeholder: "Base" %>
+                  <%= text_field_tag "character[attributes_attributes][0][base]", nil, class: "form-control", placeholder: "Base" %>
                 </div>
                 <div class="col-xs-4 col-md-4">
-                  <%= text_field_tag "attributes[0][modifier]", nil, class: "form-control", placeholder: "Mod" %>
+                  <%= text_field_tag "character[attributes_attributes][0][modifier]", nil, class: "form-control", placeholder: "Mod" %>
                 </div>
                 <div class="col-xs-4 col-md-4">
-                  <%= text_field_tag "attributes[0][bonus]", nil, class: "form-control", placeholder: "Bonus" %>
+                  <%= text_field_tag "character[attributes_attributes][0][bonus]", nil, class: "form-control", placeholder: "Bonus" %>
                 </div>
-                <%= hidden_field_tag "attributes[0][name]", "Destreza" %>
+                <%= hidden_field_tag "character[attributes_attributes][0][name]", "Destreza" %>
               </div>
             </div> 
 
@@ -180,15 +198,15 @@
             <div class="row">
               <div class="form-group">
                 <div class="col-xs-4 col-md-4">
-                  <%= text_field_tag "attributes[0][base]", nil, class: "form-control", placeholder: "Base" %>
+                  <%= text_field_tag "character[attributes_attributes][0][base]", nil, class: "form-control", placeholder: "Base" %>
                 </div>
                 <div class="col-xs-4 col-md-4">
-                  <%= text_field_tag "attributes[0][modifier]", nil, class: "form-control", placeholder: "Mod" %>
+                  <%= text_field_tag "character[attributes_attributes][0][modifier]", nil, class: "form-control", placeholder: "Mod" %>
                 </div>
                 <div class="col-xs-4 col-md-4">
-                  <%= text_field_tag "attributes[0][bonus]", nil, class: "form-control", placeholder: "Bonus" %>
+                  <%= text_field_tag "character[attributes_attributes][0][bonus]", nil, class: "form-control", placeholder: "Bonus" %>
                 </div>
-                <%= hidden_field_tag "attributes[0][name]", "Destreza" %>
+                <%= hidden_field_tag "character[attributes_attributes][0][name]", "Destreza" %>
               </div>
             </div> 
 
@@ -197,15 +215,15 @@
             <div class="row">
               <div class="form-group">
                 <div class="col-xs-4 col-md-4">
-                  <%= text_field_tag "attributes[0][base]", nil, class: "form-control", placeholder: "Base" %>
+                  <%= text_field_tag "character[attributes_attributes][0][base]", nil, class: "form-control", placeholder: "Base" %>
                 </div>
                 <div class="col-xs-4 col-md-4">
-                  <%= text_field_tag "attributes[0][modifier]", nil, class: "form-control", placeholder: "Mod" %>
+                  <%= text_field_tag "character[attributes_attributes][0][modifier]", nil, class: "form-control", placeholder: "Mod" %>
                 </div>
                 <div class="col-xs-4 col-md-4">
-                  <%= text_field_tag "attributes[0][bonus]", nil, class: "form-control", placeholder: "Bonus" %>
+                  <%= text_field_tag "character[attributes_attributes][0][bonus]", nil, class: "form-control", placeholder: "Bonus" %>
                 </div>
-                <%= hidden_field_tag "attributes[0][name]", "Inteligência" %>
+                <%= hidden_field_tag "character[attributes_attributes][0][name]", "Inteligência" %>
               </div>
             </div>
 
@@ -214,15 +232,15 @@
             <div class="row">
               <div class="form-group">
                 <div class="col-xs-4 col-md-4">
-                  <%= text_field_tag "attributes[0][base]", nil, class: "form-control", placeholder: "Base" %>
+                  <%= text_field_tag "character[attributes_attributes][0][base]", nil, class: "form-control", placeholder: "Base" %>
                 </div>
                 <div class="col-xs-4 col-md-4">
-                  <%= text_field_tag "attributes[0][modifier]", nil, class: "form-control", placeholder: "Mod" %>
+                  <%= text_field_tag "character[attributes_attributes][0][modifier]", nil, class: "form-control", placeholder: "Mod" %>
                 </div>
                 <div class="col-xs-4 col-md-4">
-                  <%= text_field_tag "attributes[0][bonus]", nil, class: "form-control", placeholder: "Bonus" %>
+                  <%= text_field_tag "character[attributes_attributes][0][bonus]", nil, class: "form-control", placeholder: "Bonus" %>
                 </div>
-                <%= hidden_field_tag "attributes[0][name]", "Força de Vontade" %>
+                <%= hidden_field_tag "character[attributes_attributes][0][name]", "Força de Vontade" %>
               </div>
             </div> 
 
@@ -231,15 +249,15 @@
             <div class="row">
               <div class="form-group">
                 <div class="col-xs-4 col-md-4">
-                  <%= text_field_tag "attributes[0][base]", nil, class: "form-control", placeholder: "Base" %>
+                  <%= text_field_tag "character[attributes_attributes][0][base]", nil, class: "form-control", placeholder: "Base" %>
                 </div>
                 <div class="col-xs-4 col-md-4">
-                  <%= text_field_tag "attributes[0][modifier]", nil, class: "form-control", placeholder: "Mod" %>
+                  <%= text_field_tag "character[attributes_attributes][0][modifier]", nil, class: "form-control", placeholder: "Mod" %>
                 </div>
                 <div class="col-xs-4 col-md-4">
-                  <%= text_field_tag "attributes[0][bonus]", nil, class: "form-control", placeholder: "Bonus" %>
+                  <%= text_field_tag "character[attributes_attributes][0][bonus]", nil, class: "form-control", placeholder: "Bonus" %>
                 </div>
-                <%= hidden_field_tag "attributes[0][name]", "Percepção" %>
+                <%= hidden_field_tag "character[attributes_attributes][0][name]", "Percepção" %>
               </div>
             </div> 
 
@@ -248,15 +266,15 @@
             <div class="row">
               <div class="form-group">
                 <div class="col-xs-4 col-md-4">
-                  <%= text_field_tag "attributes[0][base]", nil, class: "form-control", placeholder: "Base" %>
+                  <%= text_field_tag "character[attributes_attributes][0][base]", nil, class: "form-control", placeholder: "Base" %>
                 </div>
                 <div class="col-xs-4 col-md-4">
-                  <%= text_field_tag "attributes[0][modifier]", nil, class: "form-control", placeholder: "Mod" %>
+                  <%= text_field_tag "character[attributes_attributes][0][modifier]", nil, class: "form-control", placeholder: "Mod" %>
                 </div>
                 <div class="col-xs-4 col-md-4">
-                  <%= text_field_tag "attributes[0][bonus]", nil, class: "form-control", placeholder: "Bonus" %>
+                  <%= text_field_tag "character[attributes_attributes][0][bonus]", nil, class: "form-control", placeholder: "Bonus" %>
                 </div>
-                <%= hidden_field_tag "attributes[0][name]", "Carisma" %>
+                <%= hidden_field_tag "character[attributes_attributes][0][name]", "Carisma" %>
               </div>
             </div> 
 
@@ -277,15 +295,15 @@
               <div class="row">
 
                 <div class="col-xs-4 col-md-4">
-                  <%= text_field_tag "magics[know]", nil, class: "form-control", placeholder: "Entender" %>
+                  <%= text_field_tag "character[magic_attributes][know]", nil, class: "form-control", placeholder: "Entender" %>
                 </div>
 
                 <div class="col-xs-4 col-md-4">
-                  <%= text_field_tag "character[make]", nil, class: "form-control", placeholder: "Criar" %>
+                  <%= text_field_tag "character[magic_attributes][make]", nil, class: "form-control", placeholder: "Criar" %>
                 </div>
 
                 <div class="col-xs-4 col-md-4">
-                  <%= text_field_tag "character[handle]", nil, class: "form-control", placeholder: "Controlar" %>
+                  <%= text_field_tag "character[magic_attributes][handle]", nil, class: "form-control", placeholder: "Controlar" %>
                 </div>
               </div>
             </div>
@@ -295,61 +313,61 @@
             <div class="form-group">
              <div class="row row_pad">
                 <div class="col-xs-6 col-md-6">
-                  <%= text_field_tag "magics[fire]", nil, class: "form-control", placeholder: "Fogo" %>
+                  <%= text_field_tag "character[magic_attributes][fire]", nil, class: "form-control", placeholder: "Fogo" %>
                 </div>
 
                 <div class="col-xs-6 col-md-6">
-                  <%= text_field_tag "character[plants]", nil, class: "form-control", placeholder: "Plantas" %>
+                  <%= text_field_tag "character[magic_attributes][plants]", nil, class: "form-control", placeholder: "Plantas" %>
                 </div>
               </div>
               
               <div class="row row_pad">
                 <div class="col-xs-6 col-md-6">
-                  <%= text_field_tag "magics[water]", nil, class: "form-control", placeholder: "Água" %>
+                  <%= text_field_tag "character[magic_attributes][water]", nil, class: "form-control", placeholder: "Água" %>
                 </div>
 
                 <div class="col-xs-6 col-md-6">
-                  <%= text_field_tag "character[animals]", nil, class: "form-control", placeholder: "Animais" %>
+                  <%= text_field_tag "character[magic_attributes][animals]", nil, class: "form-control", placeholder: "Animais" %>
                 </div>
               </div>
               
               <div class="row row_pad">
                 <div class="col-xs-6 col-md-6">
-                  <%= text_field_tag "magics[earth]", nil, class: "form-control", placeholder: "Terra" %>
+                  <%= text_field_tag "character[magic_attributes][earth]", nil, class: "form-control", placeholder: "Terra" %>
                 </div>
 
                 <div class="col-xs-6 col-md-6">
-                  <%= text_field_tag "character[human]", nil, class: "form-control", placeholder: "Humanos" %>
+                  <%= text_field_tag "character[magic_attributes][human]", nil, class: "form-control", placeholder: "Humanos" %>
                 </div>
               </div>
               
               <div class="row row_pad">
                 <div class="col-xs-6 col-md-6">
-                  <%= text_field_tag "magics[air]", nil, class: "form-control", placeholder: "Ar" %>
+                  <%= text_field_tag "character[magic_attributes][air]", nil, class: "form-control", placeholder: "Ar" %>
                 </div>
 
                 <div class="col-xs-6 col-md-6">
-                  <%= text_field_tag "character[dead]", nil, class: "form-control", placeholder: "Mortos" %>
+                  <%= text_field_tag "character[magic_attributes][dead]", nil, class: "form-control", placeholder: "Mortos" %>
                 </div>
               </div>
               
               <div class="row row_pad">
                 <div class="col-xs-6 col-md-6">
-                  <%= text_field_tag "magics[light]", nil, class: "form-control", placeholder: "Lux" %>
+                  <%= text_field_tag "character[magic_attributes][light]", nil, class: "form-control", placeholder: "Lux" %>
                 </div>
 
                 <div class="col-xs-6 col-md-6">
-                  <%= text_field_tag "character[extra_planar]", nil, class: "form-control", placeholder: "Extra-Planar" %>
+                  <%= text_field_tag "character[magic_attributes][extra_planar]", nil, class: "form-control", placeholder: "Extra-Planar" %>
                 </div>
               </div>
               
               <div class="row row_pad">
                 <div class="col-xs-6 col-md-6">
-                  <%= text_field_tag "magics[dark]", nil, class: "form-control", placeholder: "Trevas" %>
+                  <%= text_field_tag "character[magic_attributes][dark]", nil, class: "form-control", placeholder: "Trevas" %>
                 </div>
 
                 <div class="col-xs-6 col-md-6">
-                  <%= text_field_tag "character[meta_planar]", nil, class: "form-control", placeholder: "Meta-Planar" %>
+                  <%= text_field_tag "character[magic_attributes][meta_planar]", nil, class: "form-control", placeholder: "Meta-Planar" %>
                 </div>
               </div>
             </div>
@@ -434,32 +452,22 @@
             <h3 class="panel-title">Pericias</h3>
           </div>
           <div class="panel-body">
-            
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="row">
-      <div class="col-lg-6">
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h3 class="panel-title">Armas</h3>
-          </div>
-          <div class="panel-body">
-
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-6">
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h3 class="panel-title">Armaduras</h3>
-          </div>
-          <div class="panel-body">
-            
+            <div class="form-group">
+              <div class="col-xs-4 col-md-4">
+                <input class="form-control" id="attributes_0_base" name="attributes[0][base]" placeholder="Nome" type="text">
+              </div>
+              <div class="col-xs-4 col-md-4">
+                <input class="form-control" id="attributes_0_base" name="attributes[0][base]" placeholder="Base" type="text">
+              </div>
+              <div class="col-xs-4 col-md-4">
+                <input class="form-control" id="attributes_0_modifier" name="attributes[0][modifier]" placeholder="Mod" type="text">
+              </div>
+              <input id="attributes_0_name" name="attributes[0][name]" type="hidden" value="Inteligência">
+            </div>
+            skill_points
+            bonus
+            player_id
+            skill_id
           </div>
         </div>
       </div>
@@ -478,73 +486,6 @@
         </div>
       </div>
     </div>
-
-
-
   <% end %>
 </div>
-
-
-
-<script type="text/javascript">
-  $(function(){
-    $("#add_improvement").click(function(){
-      var new_improvement = $("#improvements .container_improvement").last().clone();
-      new_improvement = count_increment(new_improvement);
-
-      var count = $(new_improvement).attr("count");
-
-      $(new_improvement).find("input").each(function(){
-        this.name = this.name.replace(/[0-9]{1,2}/g, count);
-        this.value = "";
-      });
-
-      $(new_improvement).find("label").each(function(){
-        var _for = $(this).attr("for");
-         $(this).attr("for", _for.replace(/[0-9]{1,2}/g, count));
-      });
-
-      $("#improvements").append("<hr>");
-      $("#improvements").append(new_improvement);
-
-      return false;
-    });
-
-    $("#add_injurie").click(function(){
-      var new_improvement = $("#injuries .container_injuries").last().clone();
-      new_improvement = count_increment(new_improvement);
-
-      var count = $(new_improvement).attr("count");
-
-      $(new_improvement).find("input").each(function(){
-        this.name = this.name.replace(/[0-9]{1,2}/g, count);
-        this.value = "";
-      });
-
-      $(new_improvement).find("label").each(function(){
-        var _for = $(this).attr("for");
-         $(this).attr("for", _for.replace(/[0-9]{1,2}/g, count));
-      });
-
-      $("#injuries").append("<hr>");
-      $("#injuries").append(new_improvement);
-
-      return false;
-    });
-
-
-    function count_increment(improvement) {
-      var count = parseInt ( $(improvement).attr("count") );
-      $(improvement).attr("count", (count+1));
-
-      return improvement
-    }
-
-    $('#history').redactor({
-        toolbarFixedBox: true
-    });
-
-  });
-</script>
-
 

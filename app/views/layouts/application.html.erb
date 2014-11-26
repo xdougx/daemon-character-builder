@@ -7,11 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<header>
-	<%= render partial: 'layouts/header' %>
-</header>
 
-<%= yield %>
+<div class="margeable" id="principal_container">
+	<header>
+		<%= render partial: 'layouts/header' %>
+	</header>
+  
+  <div id="base_container"></div>
+</div>
 
 </body>
 </html>
