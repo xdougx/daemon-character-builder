@@ -13,6 +13,7 @@ gem 'bootstrap-sass'
 gem 'bcrypt-ruby'
 gem 'bcrypt', '~> 3.1.7'
 gem 'autoprefixer-rails'
+gem 'awesome_print'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 

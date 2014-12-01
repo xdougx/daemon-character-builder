@@ -38,8 +38,6 @@ ActiveRecord::Schema.define(version: 20140613010223) do
   create_table "character_improvements", force: true do |t|
     t.integer  "character_id"
     t.integer  "improvement_id"
-    t.string   "name"
-    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -47,14 +45,11 @@ ActiveRecord::Schema.define(version: 20140613010223) do
   create_table "character_injuries", force: true do |t|
     t.integer  "character_id"
     t.integer  "injury_id"
-    t.string   "name"
-    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "character_skills", force: true do |t|
-    t.string   "name"
     t.string   "attribute"
     t.integer  "skill_points"
     t.integer  "bonus"
