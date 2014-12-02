@@ -17,7 +17,7 @@ class CreateCharacters < ActiveRecord::Migration
       t.integer :hero_points
       t.integer :magic_points
       t.integer :focus_points
-      t.integer :magical_aptitude
+      t.integer :faith_points
       t.integer :load
       t.integer :lifting
       t.integer :speed

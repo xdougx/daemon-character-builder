@@ -5,8 +5,10 @@
 class Character < ActiveRecord::Base
 	belongs_to :player
 
-	has_many :char_attributes, class: Attribute
+
+
 	has_one :magic
+	has_one :char_attributes, class: Attribute
 	has_many :improvements, class: CharacterImprovement
 	has_many :injuries, class: CharacterInjury
 	has_many :skills, class: CharacterSkill

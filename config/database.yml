@@ -18,9 +18,6 @@ test:
 
 production:
   <<: *default
-  username: douglas
-  password:
-  host: 'ec2-54-225-101-199.compute-1.amazonaws.com'
-  database: df7k6r2rdju8l2
-  username: hunjzngljrmidv
-  password: oBrRGvSTv9ZO1mKU6j7vk9kxT_
+  database: rpg_production
+  # username: api-homeycook
+  # password: <%= ENV['API-HOMEYCOOK_DATABASE_PASSWORD'] %>

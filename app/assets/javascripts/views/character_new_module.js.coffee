@@ -1,4 +1,11 @@
 class @CharacterNewModule
+  calculate_hp: () ->
+    $('#character_attributes_char_attributes_constitution, #character_attributes_char_attributes_strength').on 'keydown', (e) ->
+      con = $('#character_attributes_char_attributes_constitution').val()
+      fr = $('#character_attributes_char_attributes_strength').val()
+      hp = Math.round((parseInt(con)+parseInt(fr))/2)
+      $("#character_health_points").val(hp)
+
   add_improvement: () ->
     $("#add_improvement").click ->
       new_improvement = $("#improvements .container_improvement").last().clone()

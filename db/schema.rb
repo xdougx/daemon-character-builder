@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140613010223) do
+ActiveRecord::Schema.define(version: 20141202162613) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,10 +26,22 @@ ActiveRecord::Schema.define(version: 20140613010223) do
   end
 
   create_table "attributes", force: true do |t|
-    t.string   "name"
-    t.integer  "base"
-    t.integer  "modifier"
-    t.integer  "bonus"
+    t.integer  "strength"
+    t.integer  "constitution"
+    t.integer  "dexterity"
+    t.integer  "agility"
+    t.integer  "inteligence"
+    t.integer  "willpower"
+    t.integer  "perception"
+    t.integer  "charisma"
+    t.integer  "strength_bonus"
+    t.integer  "constitution_bonus"
+    t.integer  "dexterity_bonus"
+    t.integer  "agility_bonus"
+    t.integer  "inteligence_bonus"
+    t.integer  "willpower_bonus"
+    t.integer  "perception_bonus"
+    t.integer  "charisma_bonus"
     t.integer  "character_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -86,7 +98,7 @@ ActiveRecord::Schema.define(version: 20140613010223) do
     t.integer  "hero_points"
     t.integer  "magic_points"
     t.integer  "focus_points"
-    t.integer  "magical_aptitude"
+    t.integer  "faith_points"
     t.integer  "load"
     t.integer  "lifting"
     t.integer  "speed"
@@ -100,6 +112,7 @@ ActiveRecord::Schema.define(version: 20140613010223) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "cost"
   end
 
   create_table "injuries", force: true do |t|
@@ -107,6 +120,7 @@ ActiveRecord::Schema.define(version: 20140613010223) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "cost"
   end
 
   create_table "magics", force: true do |t|

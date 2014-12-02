@@ -18,7 +18,7 @@
 @import "bootstrap";
 
 .row_pad {
-	padding: 18px 0;
+	padding: 10px;
 }
 
 .box_elements_left {
@@ -38,4 +38,26 @@
 		font-size:	15px;
 		line-height: 41px;
 	}
+}
+
+.center {
+	text-align: center;
+}
+
+.left {
+	text-align: left;
+}
+
+.right {
+	text-align: right;
+}
+
+.input-group-max {
+	width: 70px;
+	font-size: 10px;
+	padding: 5px 5px;
+}
+
+.input-group-min {
+	width: 57px;
 }
