@@ -5,12 +5,12 @@
 class Character < ActiveRecord::Base
 	belongs_to :player
 
-	has_many :attributes
+	has_many :char_attributes, class: Attribute
 	has_one :magic
 	has_many :improvements, class: CharacterImprovement
 	has_many :injuries, class: CharacterInjury
 	has_many :skills, class: CharacterSkill
-	has_many :weapon_skills, class: CharacterWaeponSkills
+	has_many :weapon_skills, class: CharacterWeaponSkills
 
 	accepts_nested_attributes_for :magic, allow_destroy: true
 	accepts_nested_attributes_for :attributes, allow_destroy: true
