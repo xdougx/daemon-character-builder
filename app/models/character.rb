@@ -13,7 +13,7 @@ class Character < ActiveRecord::Base
 	has_many :weapon_skills, class: CharacterWeaponSkills
 
 	accepts_nested_attributes_for :magic, allow_destroy: true
-	accepts_nested_attributes_for :attributes, allow_destroy: true
+	accepts_nested_attributes_for :char_attributes, allow_destroy: true
 	accepts_nested_attributes_for :improvements, allow_destroy: true
 	accepts_nested_attributes_for :injuries, allow_destroy: true
 	accepts_nested_attributes_for :skills, allow_destroy: true
