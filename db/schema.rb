@@ -98,6 +98,7 @@ ActiveRecord::Schema.define(version: 20140613010223) do
   create_table "improvements", force: true do |t|
     t.string   "name"
     t.text     "description"
+    t.integer  "cost"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -105,6 +106,7 @@ ActiveRecord::Schema.define(version: 20140613010223) do
   create_table "injuries", force: true do |t|
     t.string   "name"
     t.text     "description"
+    t.integer  "cost"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

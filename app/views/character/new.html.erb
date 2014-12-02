@@ -360,7 +360,8 @@
           </div>
           <div class="panel-body">
             <div id="improvements">
-              <div class="container_improvement" count="0">
+              <div class="container_improvement">
+                <div id="improvement_list" count="0"></div>
                 <div class="form-group">
                   <%= improvement_select %>
                 </div>
@@ -368,7 +369,7 @@
             </div>
 
             <div>
-              <button class="btn btn-primary" id="add_improvement"><span class="glyphicon glyphicon-plus"></span> Adicionar Aprimoramento</button>
+              <button class="btn btn-primary" id="add_improvement"><span class="glyphicon glyphicon-plus"></span> Adicionar</button>
             </div>
 
           </div>
@@ -382,35 +383,43 @@
           </div>
           <div class="panel-body">
             <div id="injuries">
-              <div class="container_injuries" count="0">
+              <div class="container_injury">
+                <div id="injury_list" count="0"></div>
                 <div class="form-group">
-                  <label for="injuries[0][name]">Aprimoramento</label>
-                  <%= text_field_tag "injuries[0][name]", nil, class: "form-control", placeholder: "Fanatico" %>
-                </div>
-
-                <div class="form-group">
-                  <label for="injuries[0][description]">Efeito</label>
-                  <%= text_field_tag "injuries[0][description]", nil, class: "form-control", placeholder: "É fanatico em querer destruir planos de Ambaron" %>
+                  <%= injury_select %>
                 </div>
               </div>
             </div>
 
             <div>
-              <button class="btn btn-primary" id="add_injurie"><span class="glyphicon glyphicon-plus"></span> Adicionar Aprimoramento</button>
+              <button class="btn btn-primary" id="add_injury"><span class="glyphicon glyphicon-plus"></span> Adicionar</button>
             </div>
 
           </div>
         </div>
       </div>
+
     </div>
 
     <div class="row">
       <div class="col-lg-6">
         <div class="panel panel-primary">
           <div class="panel-heading">
-            <h3 class="panel-title">Pericias com Armas</h3>
+            <h3 class="panel-title">Perícia com Armas</h3>
           </div>
           <div class="panel-body">
+            <div id="weapon_skills">
+              <div class="container_weapon_skill">
+                <div id="weapon_skill_list" count="0"></div>
+                <div class="form-group">
+                  <%= weapon_skill_select %>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <button class="btn btn-primary" id="add_injury"><span class="glyphicon glyphicon-plus"></span> Adicionar</button>
+            </div>
 
           </div>
         </div>
@@ -419,15 +428,22 @@
       <div class="col-lg-6">
         <div class="panel panel-primary">
           <div class="panel-heading">
-            <h3 class="panel-title">Pericias</h3>
+            <h3 class="panel-title">Perícias</h3>
           </div>
           <div class="panel-body">
-            <div class="form-group">
-              <div class="col-xs-4 col-md-4">
-                <input class="form-control" id="attributes_0_base" name="attributes[0][base]" placeholder="Nome" type="text">
+            <div id="skills">
+              <div class="container_skill">
+                <div id="skill_list" count="0"></div>
+                <div class="form-group">
+                  <%= skill_select %>
+                </div>
               </div>
-              
             </div>
+
+            <div>
+              <button class="btn btn-primary" id="add_injury"><span class="glyphicon glyphicon-plus"></span> Adicionar</button>
+            </div>
+
           </div>
         </div>
       </div>
