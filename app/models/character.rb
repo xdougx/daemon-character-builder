@@ -5,8 +5,6 @@
 class Character < ActiveRecord::Base
 	belongs_to :player
 
-
-
 	has_one :magic
 	has_one :char_attributes, class: Attribute
 	has_many :improvements, class: CharacterImprovement

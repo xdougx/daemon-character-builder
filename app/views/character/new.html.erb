@@ -1,28 +1,45 @@
 <div class="container">
 	<%= form_tag '/characters', role: 'form' do |f| %>
+    <div id="helpers" role="tabpanel">
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#infos" aria-controls="infos" role="tab" data-toggle="tab">Infos</a></li>
+        <li role="presentation"><a href="#races" aria-controls="races" role="tab" data-toggle="tab">Guia Raças</a></li>
+        <li role="presentation"><a href="#kits" aria-controls="kits" role="tab" data-toggle="tab">Kits Personagens</a></li>
+      </ul>
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="infos">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="box_elements_left">
+                <h3>Attributos</h3>
+                <p id="attributes_left">101</p>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="box_elements_left">
+                <h3>Aprimoramentos Positivos</h3>
+                <p id="improvements_left">5</p>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="box_elements_left">
+                <h3>Perícias</h3>
+                <p id="skills_left" class="small">10xAge + 5xINT</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="races">
+          <%= render partial: 'races_guide'%>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="kits">...</div>
+      </div>
+    </div>
+
     <div class="col-lg-12">
-      <h4>Criar Novo Personagem</h4>	
+      <h4>Criar Novo Personagem</h4>  
     </div>
-    <div class="row">
-      <div class="col-lg-4">
-        <div class="box_elements_left">
-          <h3>Attributos</h3>
-          <p id="attributes_left">101</p>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="box_elements_left">
-          <h3>Aprimoramentos Positivos</h3>
-          <p id="improvements_left">5</p>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="box_elements_left">
-          <h3>Perícias</h3>
-          <p id="skills_left" class="small">10xAge + 5xINT</p>
-        </div>
-      </div>
-    </div>
+    
     <div class="row">
       <div class="col-lg-6">
         <div class="panel panel-primary">
@@ -178,22 +195,22 @@
           </div>
           <div class="panel-body">
             <div class="row">
-              <div class="col-xs-4 col-md-4 panel-title center">Base</div>
-              <div class="col-xs-4 col-md-4 panel-title center">Modificador</div>
-              <div class="col-xs-4 col-md-4 panel-title center">Total</div>
+              <div class="col-xs-6 col-md-6 panel-title center">Base</div>
+              <div class="col-xs-3 col-md-3 panel-title center">Modificador</div>
+              <div class="col-xs-3 col-md-3 panel-title center">Total</div>
             </div>
             <% Attribute::ATTRS.each_with_index do |attr, i| %>
               <div class="row row_pad" id="attr_<%= attr.first %>">
                 <div class="form-group">
-                  <div class="col-xs-4 col-md-4">
+                  <div class="col-xs-6 col-md-6">
                     <div class="input-group">
                       <span class="input-group-addon input-group-min"><%= attr.last %></span>
                       <%= text_field_tag "character[attributes_char_attributes][#{attr.first}]", 0,  class: "form-control center", placeholder: "Base"%>
                     </div>
                     
                   </div>
-                  <div class="col-xs-4 col-md-4 center" id="<%= attr.first %>_mod">-</div>
-                  <div class="col-xs-4 col-md-4 center" id="<%= attr.first %>_total">-</div>
+                  <div class="col-xs-3 col-md-3 center" id="<%= attr.first %>_mod">-</div>
+                  <div class="col-xs-3 col-md-3 center" id="<%= attr.first %>_total">-</div>
                 </div>
               </div> 
             <% end %>
@@ -253,16 +270,24 @@
             <div id="improvements">
               <div class="container_improvement">
                 <div id="improvement_list" count="0"></div>
+
                 <div class="form-group">
                   <%= improvement_select %>
                 </div>
+              </div>
+
+              <div class="new_improvement" style="display:none;">
+                <p>
+                  <span class="improvement_name"></span>
+                  <a class="remove_new_improvement" href="javascript:void(0)">remover</a>
+                </p>
+                <input type="hidden" class="improvement_id" name="character[improvements_attributes][0][improvement_id]">
               </div>
             </div>
 
             <div>
               <button class="btn btn-primary" id="add_improvement"><span class="glyphicon glyphicon-plus"></span> Adicionar</button>
             </div>
-
           </div>
         </div>
       </div>
@@ -276,9 +301,19 @@
             <div id="injuries">
               <div class="container_injury">
                 <div id="injury_list" count="0"></div>
+                
                 <div class="form-group">
                   <%= injury_select %>
                 </div>
+
+                <div class="new_injury" style="display:none;">
+                  <p>
+                    <span class="injury_name"></span>
+                    <a class="remove_new_injury" href="javascript:void(0)">remover</a>
+                  </p>
+                  <input type="hidden" class="injury_id" name="character[injuries_attributes][0][injury_id]">
+                </div>
+
               </div>
             </div>
 
@@ -302,14 +337,30 @@
             <div id="weapon_skills">
               <div class="container_weapon_skill">
                 <div id="weapon_skill_list" count="0"></div>
+                
                 <div class="form-group">
                   <%= weapon_skill_select %>
                 </div>
+
+                <div class="form-inline new_weapon_skill" style="display:none;">
+                  <p>
+                    <span class="weapon_skill_name"></span>
+                    <span class="input-group weapon_skill_atack_skill_points">
+                      <input type="text" class="form-control" size="2" name="character[weapon_skills_attributes][0][atack_skill_points]" placeholder="ATK">
+                    </span>
+                    <span class="input-group weapon_skill_defence_skill_points">
+                      <input type="text" class="form-control" size="2" name="character[weapon_skills_attributes][0][defence_skill_points]" placeholder="DEF">
+                    </span>
+                    <a class="remove_new_weapon_skill" href="javascript:void(0)">remover</a>
+                  </p>
+                  <input type="hidden" class="weapon_skill_id" name="character[weapon_skills_attributes][0][weapon_skill_id]">
+                </div>
+
               </div>
             </div>
 
             <div>
-              <button class="btn btn-primary" id="add_injury"><span class="glyphicon glyphicon-plus"></span> Adicionar</button>
+              <button class="btn btn-primary" id="add_weapon_skill"><span class="glyphicon glyphicon-plus"></span> Adicionar</button>
             </div>
 
           </div>
@@ -328,11 +379,23 @@
                 <div class="form-group">
                   <%= skill_select %>
                 </div>
+
+                <div class="form-inline new_skill" style="display:none;">
+                  <p>
+                    <span class="skill_name"></span>
+                    <span class="input-group skill_skill_points">
+                      <input type="text" class="form-control" size="2" name="character[skills_attributes][0][skill_points]" placeholder="Pontos">
+                    </span>
+                    <a class="remove_new_skill" href="javascript:void(0)">remover</a>
+                  </p>
+                  <input type="hidden" class="skill_id" name="character[weapon_skills_attributes][0][skill_id]">
+                </div>
+
               </div>
             </div>
 
             <div>
-              <button class="btn btn-primary" id="add_injury"><span class="glyphicon glyphicon-plus"></span> Adicionar</button>
+              <button class="btn btn-primary" id="add_skill"><span class="glyphicon glyphicon-plus"></span> Adicionar</button>
             </div>
 
           </div>
