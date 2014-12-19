@@ -11,7 +11,7 @@ class Magic < ActiveRecord::Base
 		['light', 'Lux'],
 		['extra_planar', 'Extra-Planar'],
 		['dark', 'Trevas'],
-		['meta_planar', 'Meta-Planar']
+		['meta_magic', 'Meta-Magia']
 	]
 
 	FORMS = [

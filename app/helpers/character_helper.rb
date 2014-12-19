@@ -19,4 +19,14 @@ module CharacterHelper
     select_tag "weapon_skills", options_for_select(options), class: "form-control", id: "character_weapons_skills", prompt: "Perícia com Armas"
   end
 
+  def race_select
+    options = Race.all.order(:name).map {|i| ["#{i.name}", i.id] }
+    select_tag "character[race_id]", options_for_select(options), class: "form-control", id: "races", prompt: "Seleciona a Raça"
+  end
+
+  def kit_select
+    options = Kit.all.order(:name).map {|i| ["#{i.name}", i.id] }
+    select_tag "character[kit_id]", options_for_select(options), class: "form-control", id: "kits", prompt: "Selecione uma Classe"
+  end
+
 end

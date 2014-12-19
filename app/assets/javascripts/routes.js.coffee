@@ -22,5 +22,11 @@
     new CharacterController().build(this);
     return
 
+  @get "/#/characters/:id", ->
+    new CharacterController().show(this);
+    return
+
+
+
   return
 )

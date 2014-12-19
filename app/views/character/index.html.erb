@@ -1,0 +1,26 @@
+<div class="container">
+	<div class="col-lg-12">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Level</th>
+					<th>Nome</th>
+					<th>Raça</th>
+					<th>Classe</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @characters.each do |character| %>
+				<tr>
+					<td><%= character.level %></td>
+					<td><a href="/#/characters/<%= character.id %>"><%= character.name %></a></td>
+					<td><%= character.race.name %></td>
+					<td><%= character.kit.name %></td>
+					<td><a href="/character/<%= character.id %>/download.pdf">Baixar Pdf</a></td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>

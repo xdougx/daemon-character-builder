@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141202162613) do
+ActiveRecord::Schema.define(version: 20141210172619) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20141202162613) do
     t.datetime "updated_at"
   end
 
-  create_table "attributes", force: true do |t|
+  create_table "status", force: true do |t|
     t.integer  "strength"
     t.integer  "constitution"
     t.integer  "dexterity"
@@ -34,14 +34,14 @@ ActiveRecord::Schema.define(version: 20141202162613) do
     t.integer  "willpower"
     t.integer  "perception"
     t.integer  "charisma"
-    t.integer  "strength_bonus"
-    t.integer  "constitution_bonus"
-    t.integer  "dexterity_bonus"
-    t.integer  "agility_bonus"
-    t.integer  "inteligence_bonus"
-    t.integer  "willpower_bonus"
-    t.integer  "perception_bonus"
-    t.integer  "charisma_bonus"
+    t.integer  "strength_bonus", default: 0
+    t.integer  "constitution_bonus", default: 0
+    t.integer  "dexterity_bonus", default: 0
+    t.integer  "agility_bonus", default: 0
+    t.integer  "inteligence_bonus", default: 0
+    t.integer  "willpower_bonus", default: 0
+    t.integer  "perception_bonus", default: 0
+    t.integer  "charisma_bonus", default: 0
     t.integer  "character_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -62,10 +62,9 @@ ActiveRecord::Schema.define(version: 20141202162613) do
   end
 
   create_table "character_skills", force: true do |t|
-    t.string   "attribute"
     t.integer  "skill_points"
     t.integer  "bonus"
-    t.integer  "player_id"
+    t.integer  "character_id"
     t.integer  "skill_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -75,7 +74,7 @@ ActiveRecord::Schema.define(version: 20141202162613) do
     t.integer  "atack_skill_points"
     t.integer  "defence_skill_points"
     t.integer  "bonus"
-    t.integer  "player_id"
+    t.integer  "character_id"
     t.integer  "weapon_skill_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -86,7 +85,7 @@ ActiveRecord::Schema.define(version: 20141202162613) do
     t.string   "name"
     t.text     "history"
     t.integer  "race_id"
-    t.integer  "class_id"
+    t.integer  "kit_id"
     t.string   "profession"
     t.integer  "gold"
     t.string   "silver"
@@ -99,6 +98,7 @@ ActiveRecord::Schema.define(version: 20141202162613) do
     t.integer  "magic_points"
     t.integer  "focus_points"
     t.integer  "faith_points"
+    t.integer  "magical_aptitude"
     t.integer  "load"
     t.integer  "lifting"
     t.integer  "speed"
@@ -109,18 +109,34 @@ ActiveRecord::Schema.define(version: 20141202162613) do
 
   create_table "improvements", force: true do |t|
     t.string   "name"
+    t.integer  "cost"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "cost"
   end
 
   create_table "injuries", force: true do |t|
     t.string   "name"
+    t.integer  "cost"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "cost"
+  end
+
+  create_table "kits", force: true do |t|
+    t.string   "name"
+    t.string   "cost"
+    t.string   "skill_points_cost"
+    t.string   "hero_points"
+    t.string   "faith_points"
+    t.string   "restrictions"
+    t.text     "skills"
+    t.string   "improvements"
+    t.string   "magic_points"
+    t.text     "magic_path"
+    t.text     "special"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "magics", force: true do |t|
@@ -139,7 +155,7 @@ ActiveRecord::Schema.define(version: 20141202162613) do
     t.integer  "dead"
     t.integer  "extra_planar"
     t.integer  "meta_magic"
-    t.integer  "player_id"
+    t.integer  "character_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -149,6 +165,18 @@ ActiveRecord::Schema.define(version: 20141202162613) do
     t.string   "email"
     t.string   "password"
     t.string   "password_digest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "races", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "cost"
+    t.string   "attrs"
+    t.string   "age"
+    t.text     "improvements"
+    t.text     "injuries"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

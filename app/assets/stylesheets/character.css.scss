@@ -1,3 +1,185 @@
-// Place all the styles related to the Character controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "character_font_face";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+	font-family: latoregular;
+	background-color: #d0d0d0;
+}
+
+.reseted {
+	margin: 0;
+	padding: 0;
+}
+
+#principal_container {
+	max-width: 940px;
+	width: 940px;
+	padding: 5mm;
+	margin: 0 auto;
+	background-color: #fff;
+	display: table;
+}
+
+/* Bootstrap For New*/
+
+.col-xs-4-8 {
+	width: 48%;
+	float: left;
+}
+
+.col-xs-6-8 {
+	width: 100%;
+	float: left;
+}
+
+.offset-40 {
+	margin-left: 40px;
+}
+
+.right_1 {
+	width: 50%;
+	float: right;
+}
+
+/* Classes */
+.attr {
+	&:last-child {
+		border-bottom: solid 1px #cfcfcf;
+	}
+}
+.gray_title {
+	font-family: latobold;
+	background-color: #efefef;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+/* borders */
+.b-t {
+	border-top: solid 1px #cfcfcf;
+}
+.b-b {
+	border-bottom: solid 1px #cfcfcf;
+}
+.b-r {
+	border-right: solid 1px #cfcfcf;
+}
+.b-l {
+	border-left: solid 1px #cfcfcf;
+}
+
+.b-f {
+	border: solid 1px #cfcfcf;
+}
+
+.min-height-20 {
+	min-height: 24px;
+}
+
+/* Positions */
+.center {
+	text-align: center;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+/* Sizes */
+
+.percent_33 {
+	width: 33.33333%;
+}
+
+.percent_50 {
+	width: 50%;
+}
+
+.relative {
+	position: relative;
+}
+
+/* Paddings */
+
+.p0 {
+	padding: 0;
+}
+
+.p1-5 {
+	padding: 1px;
+}
+
+.p1 {
+	padding: 3px 1px 1px 1px;
+}
+
+.p2 {
+	padding: 4px 2px 2px 2px;
+}
+
+.p3 {
+	padding: 5px 3px 3px 3px;
+}
+
+.p4 {
+	padding: 6px 4px 4px 4px;
+}
+
+.p5 {
+	padding: 7px 1px 5px 1px;
+}
+
+
+.p10 {
+	padding: 12px 10px 10px 10px;
+}
+
+.m0 {
+	margin: 0;
+}
+
+.m-b-1 {
+	margin-bottom: 10px
+}
+
+/* Font Sizes*/
+
+.f-s-8 {
+	font-size: 10px;
+	line-height: 20px;
+}
+
+.f-s-12 {
+	font-size: 12px;
+	line-height: 20px;
+}
+
+.f-s-14 {
+	font-size: 14px;
+}
+
+
+
+/* IDS */
+
+#floated_label_1 {
+	position: absolute;
+	transform: rotate(-90deg);
+	top: 133.5555px;
+	left: -95px;
+	background-color: #f0f0f0;
+	border: solid 1px #cfcfcf;
+	
+	#mental {
+		width: 99px;
+	}
+	#fisico {
+		width: 100px;
+	}
+
+}

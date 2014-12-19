@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  cost: MyString
+  skill_points_cost: MyString
+  hero_points: MyString
+  faith_points: MyString
+  restrictions: MyString
+  skills: MyText
+  improvements: MyString
+  magic_points: MyString
+  magic_path: MyText
+  special: MyText
+
+two:
+  name: MyString
+  cost: MyString
+  skill_points_cost: MyString
+  hero_points: MyString
+  faith_points: MyString
+  restrictions: MyString
+  skills: MyText
+  improvements: MyString
+  magic_points: MyString
+  magic_path: MyText
+  special: MyText

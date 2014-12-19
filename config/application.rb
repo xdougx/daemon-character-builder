@@ -14,7 +14,7 @@ module RpgSystem
     config.action_controller.include_all_helpers = true
 
     config.time_zone = 'Brasilia'
-    config.i18n.default_locale = "pt-br"
+    # config.i18n.default_locale = "pt-br"
 
     config.filter_parameters += [:password]
 

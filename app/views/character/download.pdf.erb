@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="pt">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title><%= @character.name %></title>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css'>
+		<%= wicked_pdf_stylesheet_link_tag "character", media: 'print' -%>
+	</head>
+	
+	<body>
+		<div id="principal_container"> 
+			<div class="col-xs-12">
+			
+				<div class="row reseted m-b-1">
+					<div class="col-xs-5">
+						<div class="row b-b b-r b-l">
+							<div class="col-xs-6 b-r b-t gray_title"><p class="p1-5 m0 center">Personagem</p></div>
+							<div class="col-xs-6 b-t gray_title"><p class="p1-5 m0 center">Raça</p></div>
+						</div>
+						<div class="row b-b b-r b-l">
+							<div class="col-xs-6 b-r"><p class="center p1-5 m0 center"><%= @character.name %></p></div>
+							<div class="col-xs-6 "><p class="center p1-5 m0 center"><%= @character.race.name%></p></div>
+						</div>
+						<div class="row b-b b-r b-l">
+							<div class="col-xs-6 b-r gray_title"><p class="p1-5 m0 center">Classe</p></div>
+							<div class="col-xs-6  gray_title"><p class="p1-5 m0 center">Profissão</p></div>
+						</div>
+						<div class="row b-b	b-r b-l m-b-1">
+							<div class="col-xs-6 b-r"><p class="p1-5 m0 center"><%= @character.kit.name%></p></div>
+							<div class="col-xs-6 "><p class="p1-5 m0 center"><%= @character.profession %></p></div>
+						</div>
+
+						<div class="row reseted">
+							<div class="row">
+								<div class="col-xs-12 gray_title b-f"><p class="p1-5 m0 center">Level</p></div>
+							</div>
+							
+							<div class="row b-b b-r b-l">
+								<div class="col-xs-2 gray_title b-r"><p class="p1-5 m0 center">LV</p></div>
+								<div class="col-xs-4 b-r"><p class="p1-5 m0 center"><%= @character.level %></p></div>
+								<div class="col-xs-2 gray_title b-r"><p class="p1-5 m0 center">XP</p></div>
+								<div class="col-xs-4"><p class="p1-5 m0 center"><%= @character.experience %></p></div>
+							</div>
+
+							<div class="row b-b b-r b-l">
+								<div class="col-xs-4 gray_title b-r"><p class="p1-5 m0 center">Dinheiro</p></div>
+								<div class="col-xs-8 gray_title "><p class="p1-5 m0 center">Status</p></div>
+							</div>
+
+							<div class="row b-b b-r b-l">
+								<div class="col-xs-2 gray_title b-r"><p class="p1-5 m0 center">PO</p></div>
+								<div class="col-xs-2 b-r"><p class="p1-5 m0 center"><%= @character.gold %></p></div>
+
+								<div class="col-xs-2 gray_title b-r"><p class="p1-5 m0 center">PV</p></div>
+								<div class="col-xs-2 b-r"><p class="p1-5 m0 center"><%= @character.health_points %></p></div>
+
+								<div class="col-xs-2 gray_title b-r"><p class="p1-5 m0 center">PH</p></div>
+								<div class="col-xs-2 "><p class="p1-5 m0 center"><%= @character.hero_points %></p></div>
+							</div>
+
+
+							<div class="row b-b b-r b-l">
+								<div class="col-xs-2 gray_title b-r"><p class="p1-5 m0 center">PP</p></div>
+								<div class="col-xs-2 b-r"><p class="p1-5 m0 center"><%= @character.silver %></p></div>
+
+								<div class="col-xs-2 gray_title b-r"><p class="p1-5 m0 center">PM</p></div>
+								<div class="col-xs-2 b-r"><p class="p1-5 m0 center"><%= @character.magic_points %></p></div>
+
+								<div class="col-xs-2 gray_title b-r"><p class="p1-5 m0 center">PdF</p></div>
+								<div class="col-xs-2"><p class="p1-5 m0 center"><%= @character.faith_points %></p></div>
+							</div>
+
+							<div class="row b-b b-r b-l">
+								<div class="col-xs-2 gray_title b-r"><p class="p1-5 m0 center">PC</p></div>
+								<div class="col-xs-2 b-r"><p class="p1-5 m0 center"><%= @character.cooper %></p></div>
+
+								<div class="col-xs-2 gray_title b-r"><p class="p1-5 m0 center">IP</p></div>
+								<div class="col-xs-2 b-r"><p class="p1-5 m0 center"><%= @character.index_protection %></p></div>
+
+								<div class="col-xs-2 gray_title b-r"><p class="p1-5 m0 center">PF</p></div>
+								<div class="col-xs-2"><p class="p1-5 m0 center"><%= @character.focus_points %></p></div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="col-xs-7 right_1 relative">
+						<div id="floated_label_1">
+							<div class="left center" id="mental">Mental</div>
+							<div class="right b-l center" id="fisico">Fisico</div>
+						</div>
+						<div class="row b-f reseted m-b-1">
+							<div class="col-xs-4 gray_title f-s-12"><p class="p5 m0 center">Attributos</p></div>
+							<div class="col-xs-2 b-l gray_title f-s-12"><p class="p5 m0 center">Valor</p></div>
+							<div class="col-xs-2 b-l gray_title f-s-12"><p class="p5 m0 center">Mod</p></div>
+							<div class="col-xs-2 b-l gray_title f-s-12"><p class="p5 m0 center">Bônus</p></div>
+							<div class="col-xs-2 b-l gray_title f-s-12"><p class="p5 m0 center">Total</p></div>
+						</div>
+						<% Status::ATTRS.each do |attr| %>
+							<div class="row reseted b-t b-r b-l attr">
+								<div class="col-xs-4 b-r"><p class="p1 m0 center f-s-12 "><%= attr[1] %></p></div>
+								<div class="col-xs-2 b-r"><p class="p1 m0 center"><%= @character.status.send(attr[0]) %></p></div>
+								<div class="col-xs-2 b-r"><p class="p1 m0 center"><%= @character.status.send(attr[0]).modifier %></p></div>
+								<div class="col-xs-2 b-r"><p class="p1 m0 center"><%= @character.status.send("#{attr[0]}_bonus") %></p></div>
+								<div class="col-xs-2"><p class="p1 m0 center"><%= @character.status.total(attr) %></p></div>
+							</div>
+						<% end %>
+					</div>
+				</div>
+
+				<div class="row reseted m-b-1">
+					<div class="col-xs-4">
+						<div class="row reseted">
+							<div class="row">
+								<div class="col-xs-12 gray_title b-f"><p class="p1-5 m0 center">Formas</p></div>
+							</div>
+								
+							<div class="row b-b b-r b-l">
+								<div class="col-xs-2 gray_title f-s-8 b-r"><p class="p1-5 m0 center">Ent.</p></div>
+								<div class="col-xs-2 b-r"><p class="p1-5 m0 center"><%= @character.magic.know %></p></div>
+
+								<div class="col-xs-2 gray_title f-s-8 b-r"><p class="p1-5 m0 center">Cri.</p></div>
+								<div class="col-xs-2 b-r"><p class="p1-5 m0 center"><%= @character.magic.make %></p></div>
+
+								<div class="col-xs-2 gray_title f-s-8 b-r"><p class="p1-5 m0 center">Crl.</p></div>
+								<div class="col-xs-2 "><p class="p1-5 m0 center"><%= @character.magic.handle %></p></div>
+							</div>
+
+							<div class="row b-b b-r b-l">
+								<div class="col-xs-12 gray_title"><p class="p1-5 m0 center">Caminhos</p></div>
+							</div>
+
+							<div class="row b-b b-r b-l">
+								<div class="col-xs-4  f-s-8 gray_title b-r"><p class="p1-5 m0 center">Fogo</p></div>
+								<div class="col-xs-2 b-r"><p class="p1-5 m0 center"><%= @character.magic.fire %></p></div>
+								<div class="col-xs-4  f-s-8 gray_title b-r"><p class="p1-5 m0 center">Plantas</p></div>
+								<div class="col-xs-2"><p class="p1-5 m0 center"><%= @character.magic.plants %></p></div>
+							</div>
+
+							<div class="row b-b b-r b-l">
+								<div class="col-xs-4  f-s-8 gray_title b-r"><p class="p1-5 m0 center">Água</p></div>
+								<div class="col-xs-2 b-r"><p class="p1-5 m0 center"><%= @character.magic.water %></p></div>
+								<div class="col-xs-4  f-s-8 gray_title b-r"><p class="p1-5 m0 center">Animais</p></div>
+								<div class="col-xs-2"><p class="p1-5 m0 center"><%= @character.magic.animals %></p></div>
+							</div>
+
+							<div class="row b-b b-r b-l">
+								<div class="col-xs-4  f-s-8 gray_title b-r"><p class="p1-5 m0 center">Terra</p></div>
+								<div class="col-xs-2 b-r"><p class="p1-5 m0 center"><%= @character.magic.earth %></p></div>
+								<div class="col-xs-4  f-s-8 gray_title b-r"><p class="p1-5 m0 center">Humanos</p></div>
+								<div class="col-xs-2"><p class="p1-5 m0 center"><%= @character.magic.human %></p></div>
+							</div>
+
+							<div class="row b-b b-r b-l">
+								<div class="col-xs-4  f-s-8 gray_title b-r"><p class="p1-5 m0 center">Ar</p></div>
+								<div class="col-xs-2 b-r"><p class="p1-5 m0 center"><%= @character.magic.air %></p></div>
+								<div class="col-xs-4  f-s-8 gray_title b-r"><p class="p1-5 m0 center">Mortos</p></div>
+								<div class="col-xs-2"><p class="p1-5 m0 center"><%= @character.magic.dead %></p></div>
+							</div>
+
+							<div class="row b-b b-r b-l">
+								<div class="col-xs-4  f-s-8 gray_title b-r"><p class="p1-5 m0 center">Luz</p></div>
+								<div class="col-xs-2 b-r"><p class="p1-5 m0 center"><%= @character.magic.light %></p></div>
+								<div class="col-xs-4  f-s-8 gray_title b-r"><p class="p1-5 m0 center">Planar</p></div>
+								<div class="col-xs-2"><p class="p1-5 m0 center"><%= @character.magic.extra_planar %></p></div>
+							</div>
+
+							<div class="row b-b b-r b-l">
+								<div class="col-xs-4  f-s-8 gray_title b-r"><p class="p1-5 m0 center">Trevas</p></div>
+								<div class="col-xs-2 b-r"><p class="p1-5 m0 center"><%= @character.magic.dark %></p></div>
+								<div class="col-xs-4  f-s-8 gray_title b-r"><p class="p1-5 m0 center">Meta</p></div>
+								<div class="col-xs-2"><p class="p1-5 m0 center"><%= @character.magic.meta_magic %></p></div>
+							</div>
+
+						</div>
+					</div>
+					<div class="col-xs-4">
+						<div class="row b-f reseted">
+							<div class="col-xs-6 gray_title f-s-12"><p class="m0 center">Armas</p></div>
+							<div class="col-xs-3 b-l gray_title f-s-12"><p class="m0 center">Dur.</p></div>
+							<div class="col-xs-3 b-l gray_title f-s-12"><p class="m0 center">Dano</p></div>
+						</div>
+						<div class="row b-l b-r b-b reseted">
+							<div class="col-xs-6 f-s-12"><p class="m0 center">&nbsp;</p></div>
+							<div class="col-xs-3 b-l f-s-12"><p class="m0 center">&nbsp;</p></div>
+							<div class="col-xs-3 b-l f-s-12"><p class="m0 center">&nbsp;</p></div>
+						</div>
+						<div class="row b-l b-r b-b reseted">
+							<div class="col-xs-6 f-s-12"><p class="m0 center">&nbsp;</p></div>
+							<div class="col-xs-3 b-l f-s-12"><p class="m0 center">&nbsp;</p></div>
+							<div class="col-xs-3 b-l f-s-12"><p class="m0 center">&nbsp;</p></div>
+						</div>
+						<div class="row b-l b-r b-b reseted">
+							<div class="col-xs-6 f-s-12"><p class="m0 center">&nbsp;</p></div>
+							<div class="col-xs-3 b-l f-s-12"><p class="m0 center">&nbsp;</p></div>
+							<div class="col-xs-3 b-l f-s-12"><p class="m0 center">&nbsp;</p></div>
+						</div>
+						<div class="row b-l b-r b-b reseted">
+							<div class="col-xs-6 f-s-12"><p class="m0 center">&nbsp;</p></div>
+							<div class="col-xs-3 b-l f-s-12"><p class="m0 center">&nbsp;</p></div>
+							<div class="col-xs-3 b-l f-s-12"><p class="m0 center">&nbsp;</p></div>
+						</div>
+						<div class="row b-l b-r b-b reseted">
+							<div class="col-xs-6 f-s-12"><p class="m0 center">&nbsp;</p></div>
+							<div class="col-xs-3 b-l f-s-12"><p class="m0 center">&nbsp;</p></div>
+							<div class="col-xs-3 b-l f-s-12"><p class="m0 center">&nbsp;</p></div>
+						</div>
+						<div class="row b-l b-r b-b reseted">
+							<div class="col-xs-6 f-s-12"><p class="m0 center">&nbsp;</p></div>
+							<div class="col-xs-3 b-l f-s-12"><p class="m0 center">&nbsp;</p></div>
+							<div class="col-xs-3 b-l f-s-12"><p class="m0 center">&nbsp;</p></div>
+						</div>
+						<div class="row b-l b-r b-b reseted">
+							<div class="col-xs-6 f-s-12"><p class="m0 center">&nbsp;</p></div>
+							<div class="col-xs-3 b-l f-s-12"><p class="m0 center">&nbsp;</p></div>
+							<div class="col-xs-3 b-l f-s-12"><p class="m0 center">&nbsp;</p></div>
+						</div>
+						<div class="row b-l b-r b-b reseted">
+							<div class="col-xs-6 f-s-12"><p class="m0 center">&nbsp;</p></div>
+							<div class="col-xs-3 b-l f-s-12"><p class="m0 center">&nbsp;</p></div>
+							<div class="col-xs-3 b-l f-s-12"><p class="m0 center">&nbsp;</p></div>
+						</div>
+						<div class="row b-l b-r b-b reseted">
+							<div class="col-xs-6 f-s-12"><p class="m0 center">&nbsp;</p></div>
+							<div class="col-xs-3 b-l f-s-12"><p class="m0 center">&nbsp;</p></div>
+							<div class="col-xs-3 b-l f-s-12"><p class="m0 center">&nbsp;</p></div>
+						</div>
+					</div>
+					<div class="col-xs-4">
+						<div class="row b-f reseted">
+							<div class="col-xs-6 gray_title f-s-12"><p class="m0 center">Armor</p></div>
+							<div class="col-xs-3 b-l gray_title f-s-12"><p class="m0 center">Dur.</p></div>
+							<div class="col-xs-3 b-l gray_title f-s-12"><p class="m0 center">Dano</p></div>
+						</div>
+
+						<div class="row b-l b-r b-b reseted">
+							<div class="col-xs-6 f-s-12"><p class="m0 center">&nbsp;</p></div>
+							<div class="col-xs-3 b-l f-s-12"><p class="m0 center">&nbsp;</p></div>
+							<div class="col-xs-3 b-l f-s-12"><p class="m0 center">&nbsp;</p></div>
+						</div>
+						<div class="row b-l b-r b-b reseted">
+							<div class="col-xs-6 f-s-12"><p class="m0 center">&nbsp;</p></div>
+							<div class="col-xs-3 b-l f-s-12"><p class="m0 center">&nbsp;</p></div>
+							<div class="col-xs-3 b-l f-s-12"><p class="m0 center">&nbsp;</p></div>
+						</div>
+						<div class="row b-l b-r b-b reseted">
+							<div class="col-xs-6 f-s-12"><p class="m0 center">&nbsp;</p></div>
+							<div class="col-xs-3 b-l f-s-12"><p class="m0 center">&nbsp;</p></div>
+							<div class="col-xs-3 b-l f-s-12"><p class="m0 center">&nbsp;</p></div>
+						</div>
+						<div class="row b-l b-r b-b reseted">
+							<div class="col-xs-6 f-s-12"><p class="m0 center">&nbsp;</p></div>
+							<div class="col-xs-3 b-l f-s-12"><p class="m0 center">&nbsp;</p></div>
+							<div class="col-xs-3 b-l f-s-12"><p class="m0 center">&nbsp;</p></div>
+						</div>
+						<div class="row b-l b-r b-b reseted">
+							<div class="col-xs-6 f-s-12"><p class="m0 center">&nbsp;</p></div>
+							<div class="col-xs-3 b-l f-s-12"><p class="m0 center">&nbsp;</p></div>
+							<div class="col-xs-3 b-l f-s-12"><p class="m0 center">&nbsp;</p></div>
+						</div>
+						<div class="row b-l b-r b-b reseted">
+							<div class="col-xs-6 f-s-12"><p class="m0 center">&nbsp;</p></div>
+							<div class="col-xs-3 b-l f-s-12"><p class="m0 center">&nbsp;</p></div>
+							<div class="col-xs-3 b-l f-s-12"><p class="m0 center">&nbsp;</p></div>
+						</div>
+						<div class="row b-l b-r b-b reseted">
+							<div class="col-xs-6 f-s-12"><p class="m0 center">&nbsp;</p></div>
+							<div class="col-xs-3 b-l f-s-12"><p class="m0 center">&nbsp;</p></div>
+							<div class="col-xs-3 b-l f-s-12"><p class="m0 center">&nbsp;</p></div>
+						</div>
+						<div class="row b-l b-r b-b reseted">
+							<div class="col-xs-6 f-s-12"><p class="m0 center">&nbsp;</p></div>
+							<div class="col-xs-3 b-l f-s-12"><p class="m0 center">&nbsp;</p></div>
+							<div class="col-xs-3 b-l f-s-12"><p class="m0 center">&nbsp;</p></div>
+						</div>
+						<div class="row b-l b-r b-b reseted">
+							<div class="col-xs-6 f-s-12"><p class="m0 center">&nbsp;</p></div>
+							<div class="col-xs-3 b-l f-s-12"><p class="m0 center">&nbsp;</p></div>
+							<div class="col-xs-3 b-l f-s-12"><p class="m0 center">&nbsp;</p></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row reseted m-b-1">
+					
+					<div class="col-xs-4">
+						<div class="row b-f">
+							<div class=" col-xs-12 gray_title f-s-12"><p class="m0 center">Aprimoramentos Positivo</p></div>
+						</div>
+						<% @character.improvements.each do |i| %>
+							<div class="row b-l b-r b-b">
+								<div class="col-xs-12 f-s-12"><p class="m0 center"><%= i.improvement.name%></p></div>
+							</div>
+						<% end %>
+						<% (0..(10 - @character.improvements.length)).each do %>
+							<div class="row b-l b-r b-b">
+								<div class="col-xs-12 f-s-12"><p class="m0 center">&nbsp;</p></div>
+							</div>
+						<% end %>
+					</div>
+
+					<div class="col-xs-4">
+						<div class="row reseted b-f">
+							<div class=" col-xs-12 gray_title f-s-12"><p class="m0 center">Aprimoramentos Negativo</p></div>
+						</div>
+						<% @character.injuries.each do |i| %>
+							<div class="row reseted b-l b-r b-b">
+								<div class="col-xs-12 f-s-12"><p class="m0 center"><%= i.injury.name%></p></div>
+							</div>
+						<% end %>
+						<% (0..(10 - @character.injuries.length)).each do %>
+						<div class="row reseted b-l b-r b-b">
+								<div class="col-xs-12 f-s-12"><p class="m0 center">&nbsp;</p></div>
+							</div>
+						<% end %>
+					</div>
+
+					<div class="col-xs-4">
+						<div class="row reseted b-f">
+							<div class=" col-xs-8 gray_title f-s-12"><p class="m0 center">Pericia com Armas</p></div>
+							<div class=" col-xs-2 gray_title f-s-12"><p class="m0 center">ATK</p></div>
+							<div class=" col-xs-2 gray_title f-s-12"><p class="m0 center">DEF</p></div>
+						</div>
+						<% @character.weapon_skills.each do |w| %>
+							<div class="row reseted b-l b-r b-b">
+								<div class="col-xs-8 f-s-12"><p class="m0 center"><%= w.weapon_skills.name %></p></div>
+								<div class="col-xs-2 f-s-12"><p class="m0 center"><%= w.atack_skill_points %></p></div>
+								<div class="col-xs-2 f-s-12"><p class="m0 center"><%= w.defence_skill_points %></p></div>
+							</div>
+						<% end %>
+						<% (0..(10 - @character.weapon_skills.length)).each do %>
+						<div class="row reseted b-l b-r b-b">
+								<div class="col-xs-12 f-s-12"><p class="m0 center">&nbsp;</p></div>
+							</div>
+						<% end %>
+					</div>
+				</div>
+				
+
+				<div class="m-b-1">
+					<div class="reseted">
+						
+						<div class="row reseted b-f">
+							<div class="col-xs-12 gray_title f-s-12"><p class="m0 center">Pericias</p></div>
+						</div>
+						
+						<div class="row reseted b-l b-r b-b">
+							<div class="col-xs-4 b-b f-s-8">
+								<div class="col-xs-6 reseted"><p class="m0">Perícia</p></div>
+								<div class="col-xs-2 reseted "><p class="m0">Pontos</p></div>
+								<div class="col-xs-2 reseted "><p class="m0">Bonus</p></div>
+								<div class="col-xs-2 reseted "><p class="m0">Total</p></div>
+							</div>
+							<div class="col-xs-4 b-b f-s-8">
+								<div class="col-xs-6 reseted"><p class="m0">Perícia</p></div>
+								<div class="col-xs-2 reseted "><p class="m0">Pontos</p></div>
+								<div class="col-xs-2 reseted "><p class="m0">Bonus</p></div>
+								<div class="col-xs-2 reseted "><p class="m0">Total</p></div>
+							</div>
+							<div class="col-xs-4 b-b f-s-8">
+								<div class="col-xs-6 reseted"><p class="m0">Perícia</p></div>
+								<div class="col-xs-2 reseted "><p class="m0">Pontos</p></div>
+								<div class="col-xs-2 reseted "><p class="m0">Bonus</p></div>
+								<div class="col-xs-2 reseted "><p class="m0">Total</p></div>
+							</div>
+
+							<% @character.skills.joins(:skill).order('skills.name').each do |s| %>
+								<div class="col-xs-4 f-s-12">
+									<div class="col-xs-6 reseted"><p class="m0"><%= s.skill.name%> [<%= s.skill.based_attribute%>]</p></div>
+									<div class="col-xs-2 reseted"><p class="m0"><%= s.skill_points %></p></div>
+									<div class="col-xs-2 reseted"><p class="m0"><%= s.bonus %></p></div>
+									<div class="col-xs-2 reseted"><p class="m0">s.total</p></div>
+								</div>
+							<% end %>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</body>
+</html>

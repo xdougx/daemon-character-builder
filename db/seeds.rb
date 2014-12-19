@@ -416,6 +416,7 @@ Skill.create(name: "Zoologia", based_attribute: "INT")
 # Perícias com Armas
 WeaponSkills.create(name: "Faca", based_attribute: "DEX/DEX")
 WeaponSkills.create(name: "Adaga", based_attribute: "DEX/DEX")
+WeaponSkills.create(name: "Bastão", based_attribute: "DEX/DEX")
 WeaponSkills.create(name: "Punhal", based_attribute: "DEX/DEX")
 WeaponSkills.create(name: "Espada Curta", based_attribute: "DEX/DEX")
 WeaponSkills.create(name: "Espada Longa", based_attribute: "DEX/DEX")
@@ -443,3 +444,247 @@ WeaponSkills.create(name: "Aríete", based_attribute: "INT")
 WeaponSkills.create(name: "Balestra", based_attribute: "INT")
 WeaponSkills.create(name: "Canhão", based_attribute: "INT")
 WeaponSkills.create(name: "Catapulta", based_attribute: "INT")
+
+# RACES
+Race.create(
+	name: "Humano",
+	cost: 0, 
+  attrs: "Normais", 
+  age: "16+1d6 anos", 
+  improvements: "Humanos falam o idioma Comum, e por isso começam com 30% nesta perícia; São versáteis e competentes, e aprendem rápido o que lhes é ensinado – Humanos recebem 5 pontos de perícia adicionais no 1º nível e a cada vez que passam de nível.", 
+  injuries: "Nenhuma"
+)
+
+Race.create(
+	name: "Anão",
+	cost: 1, 
+  attrs: "+2 CON, +1 FR, -1 AGI, -2 CAR", 
+  age: "21+2d6 anos", 
+  improvements: "Anões falam o idioma Anão, e por isso começam com 30% nesta perícia; Anões podem enxergar no escuro, mesmo sem nenhuma luz; Anões ganham um bônus de 10% em testes que envolvam pedras, metais preciosos, rochas, cavernas e montanhas; +5% em testes de resistência contra venenos; +15% em testes de resistência contra efeitos mágicos; +5% nos testes de ataque contra orcs e goblinóides, inimigos naturais dos Anões; +5% nos testes ligados a Artesanato e Ofícios com pedras e metais.", 
+  injuries: "da mesma forma que Anões ganham um bônus contra efeitos mágicos, sempre que um Anão utilizar um instrumento mágico, é aplicado uma penalidade de -15%; Anões não podem comprar o Aprimoramento Poderes Mágicos, nem adquiri-lo com um kit"
+)
+ 
+Race.create(
+	name: "Elfo",
+	cost: 1,
+	attrs: "+2 AGI, -2 CON, +2 CAR", 
+	age: "16+3d6 anos",
+	improvements: "Elfos falam o idioma Élfico, e por isso começam com 30% nesta perícia; Elfos são imunes ao sono e efeitos de magia similares; Um Elfo consegue enxergar duas vezes mais que um humano na penumbra, distinguindo cores e detalhes; Elfos são muito competentes com Arcos e Espadas Longas, recebendo +10% nos testes de ataque com estas armas.",
+	injuries: "Nenhuma"
+)
+
+
+Race.create(
+	name: "Meio-Elfo",
+	cost: 1,
+	attrs: "+1 AGI, -1 CON", 
+	age: "16+2d6 anos",
+	improvements: "Meio-elfos falam o idioma Élfico ou Comum (dependendo de onde cresceram), e por isso começam com 30% nesta perícia; Os Meio-elfos têm a mesma capacidade dos Elfos de enxergar na penumbra duas vezes mais que um humano, distinguindo cores e detalhes.",
+	injuries: "Nenhuma"
+)
+
+Race.create(
+	name: "Gnomo",
+	cost: 1,
+	attrs: "+2 CON, -2 FR", 
+	age: "25+2d6 anos",
+	improvements: "Os Gnomos falam o idioma Gnomo, e por isso começam com 30% nesta perícia; Gomos enxergam duas vezes mais que um humano na penumbra, distinguindo cores e detalhes; +10% nos testes de resistência contra ilusões, pois esta raça é familiarizada com ilusões de todos os tipos; +5% nos testes de ataque contra orcs, goblinóides e kobolds; +10% nos testes de Alquimia: Gnomos possuem um nariz sensível que facilita a identificação de componentes alquímicos; Gnomos ilusionistas gastam 1 PM a menos para lançar qualquer magia com focus em Luz.",
+	injuries: "Apenas podem usar equipamentos projetados para criaturas pequenas."
+)
+
+Race.create(
+	name: "Halfling",
+	cost: 1,
+	attrs: "3 AGI, +3 DEX, -4 FR, -2 CON", 
+	age: "16+1d6 anos",
+	improvements: "Halflings falam o idioma Halfling e por isso começam com 30% nesta Perícia; Recebem +10% em Furtividade e Esportes (Escalada); +5% em Arremesso incluindo Ataque com armas de arremesso (funda, lança, dardo, etc).",
+	injuries: "Deve usar equipamentos próprios para criaturas pequenas."
+)
+
+# Hero Kits
+
+# Arqueiro
+Kit.create(
+	name: "Arqueiro",
+	cost: 3,
+	skill_points_cost: 200,
+	hero_points: "4 por nível",
+	faith_points: "0",
+	restrictions: "Nenhuma",
+	skills: "Arco ([DEX/0, qualquer tipo 40%); Escolha outra arma [DEX/DEX] 20/20; Caça [PER] 10%; Esquiva [AGI] 30%; Animais (Montaria [AGI] 20%); Camuflagem [PER] 30%; Escutar [PER] 20%; Furtividade [AGI] 30%; Procura [PER] 10%, Rastreio [PER] 20%, Sobrevivência (escolha um ambiente) 30%, Subterfúgio 20%;",
+	improvements: "Pontos Heróicos 4, Arma preferencial",
+	magic_points: "",
+	magic_path: "",
+	special: ""
+)
+
+# Guerreiro
+Kit.create(
+	name: "Guerreiro",
+	cost: 3,
+	skill_points_cost: 200,
+	hero_points: "4 por nível",
+	faith_points: "0",
+	restrictions: "Nenhuma",
+	skills: "Armas brancas (Qualquer arma [DEX/ DEX] 40/40; 30/20 em outra); Armeiro [0/ Ferreiro ou Carpinteiro] 10%; Escudo [DEX] 30%; Esquiva [AGI] 30% Furtividade [AGI] 20%; Animais (Montaria [AGI] 20%); Escutar [PER] 10%; Esportes (Arremesso [DEX] 10%); Manipulação (Intimidação [WILL] 20%); Sobrevivência [PER] 20%.",
+	improvements: "Pontos Heróicos 4, Arma prefencial",
+	magic_points: "",
+	magic_path: "",
+	special: ""
+)
+
+# Ranger
+Kit.create(
+	name: "Ranger",
+	cost: "3",
+	skill_points_cost: "240",
+	hero_points: "4 por Nível",
+	faith_points: "0",
+	restrictions: "Nenhuma",
+	skills: "Armas Brancas de Longo Alcance (Arco qualquer [DEX/ 0] 30%); Espada Curta [DEX/ DEX] 30/25; Adaga [DEX/ DEX] 20/20; Armadilhas [INT] 20%; Caça [PER] 40%;Camuflagem [PER] 10%; Ciências (Herbalismo [0]) 20%; Furtividade [AGI] 20%; Animais (Montaria [AGI] 20%); Rastreio [PER] 30%; Sobrevivência [PER] (Floresta) 40%; Venefício [0] 10%. ",
+	improvements: "Pontos Heróicos 4, Companheiro Animal",
+	magic_points: "",
+	magic_path: "",
+	special: ""
+)
+
+# Ladrão
+Kit.create(
+	name: "Ladrão",
+	cost: "3",
+	skill_points_cost: "250",
+	hero_points: "3 por nível",
+	faith_points: "0",
+	restrictions: "Nenhuma",
+	skills: "Armas Brancas (Adaga [DEX/DEX] 20/20); Armadilhas [INT] 30%; Artes (Joalheria [DEX] 10%; Escapismo [AGI] 30%); Avaliação de Objetos [PER] 10%; Camuflagem [PER] 20%; Disfarce [INT] 10%; Escutar [PER] 20%; Furtar [DEX] 40%; Furtividade [AGI] 30%; Manipulação (Intimidação [WILL] 10%; Lábia [CAR/ Manha] 20%); Manuseio de fechaduras [DEX] 40%; Ocultamento [AGI] 20%; Subterfúgio [AGI] 20%; Procura [AGI] 20%.",
+	improvements: "Pontos Heróicos 3, Ataque Furivo",
+	magic_points: "",
+	magic_path: "",
+	special: ""
+)
+
+# Barbaro
+Kit.create(
+	name: "Barbaro",
+	cost: "2",
+	skill_points_cost: "250",
+	hero_points: "4 por nível",
+	faith_points: "0",
+	restrictions: "Nenhuma",
+	skills: "Armas Brancas (Machado 40/40, Clava 30/20 [DEX/DEX]); Esquiva [AGI] 20%; Animais (Montaria [AGI] 20%); Armadilhas [INT] 20%; Caça [PER] 20%; Ciências (Herbalismo [0] 10%); Esportes (Escalada [AGI] 20%; Natação [AGI] 20%, Corrida [CON] 20%); Rastreio [PER] 20%; Sobrevivência (Escolha um tipo) [PER] 40%; Venefício [0] 20%.",
+	improvements: "Pontos Heróicos 4, Fúria",
+	magic_points: "",
+	magic_path: "",
+	special: "Bárbaros são os únicos personagens que não sabem automaticamente como ler e escrever. Um Bárbaro pode gastar 10 pontos de perícia para ganhar a habilidade de ler e escrever em algum idioma que saiba falar. Bárbaros não podem comprar o Aprimoramento Poderes Mágicos, e sofrem um redutor de -15% sempre que estiverem utilizando um item mágico qualquer. Todos os Bárbaros são analfabetos, não sabem ler nem escrever, apenas falar, geralmente de forma rústica."
+)
+
+# Monge
+Kit.create(
+	name: "Monge",
+	cost: "3",
+	skill_points_cost: "250",
+	hero_points: "3 por nível",
+	faith_points: "0",
+	restrictions: "Nenhuma",
+	skills: "Artes Marciais (Qualquer [AGI/AGI] 40/40); Armas Brancas (Bastão [DEX/DEX] 30/30); Concentração [WILL] 20%; Ciências (Filosofia [0]) 30%; Esquiva [AGI] 40%; Esportes (Acrobacia [AGI] 20%, Salto [AGI] 20%); Furtividade [AGI] 20%; Manipulação (Empatia [CAR] 20%; Impressionar [CAR/ Etiqueta] 20%; Intimidação [WILL] 20%); Subterfúgio [PER] 30%. Aprimoramentos: Pontos Heróicos 3, Ataque Desarmado",
+	improvements: "Pontos Heróicos 3, Ataque Desarmado",
+	magic_points: "",
+	magic_path: "",
+	special: "Uma vez por dia o Monge pode despender um pouco de sua energia Chi em seus golpes desarmados, causando +1 de dano para cada 20% que ele tiver na Perícia Ciências (Filosofia)."
+)
+
+# Mago
+Kit.create(
+	name: "Mago",
+	cost: "3",
+	skill_points_cost: "200",
+	hero_points: "1 + 1 por nível",
+	faith_points: "",
+	restrictions: "Nenhuma",
+	skills: "Armas Brancas (Bastão [DEX/DEX] 10/10, Adaga [DEX/DEX] 10/10); Ciências (Herbalismo [0] 20%, pelo menos 3 subgrupos [0] 20%); Ciências Proibidas (Alquimia [0] 30%, Astrologia [0] 20%, Ocultismo [0] 20%, Rituais [0] 30%, Teoria da Magia [0] 30%); Concentração [WILL] 10%; Conhecimentos [0] (ao menos 2 com 20%); Pesquisa/ Investigação [INT] 20%.",
+	improvements: "Pontos Heróicos 1, Poderes Mágicos 1, Familiar",
+	magic_points: "2 + 2 por nível",
+	magic_path: "Depende da especialização do Mago.",
+	special: ""
+)
+
+# Bardo
+Kit.create(
+	name: "Bardo",
+	cost: "3",
+	skill_points_cost: "220",
+	hero_points: "1 por nível",
+	faith_points: "0",
+	restrictions: "Nenhuma",
+	skills: "Artes (Atuação [CAR] 20%, Canto 30% [CAR], Instrumento Musical[DEX]40%); Ciências (História [0] 20%); Ciências proibidas (Teoria da Magia [0] 20%); Camuflagem [PER] 20%; Conhecimento (Lendas [0] 30%); Disfarce [INT] 20%; Etiqueta [CAR] 20%; Idiomas (Idioma nativo 10%, Ler e escrever 10%); Pesquisa/ Investigação [INT] 10%; Manipulação (Diplomacia [CAR] 20%, Impressionar [CAR] 10%, Lábia [CAR/ Manha] 10%, Sedução [CAR] 10%); Subterfúgio [AGI] 10%;",
+	improvements: "Pontos Heróicos 1, Poderes Mágicos 1, Contatos e Aliados 2",
+	magic_points: "2 + 2 por nível",
+	magic_path: "Humanos, Meta-magia O Bardo precisa ter Artes 10% para cada ponto de focus final que desejar alocar a um Caminho ou Forma. Ele distribui os Pontos de Focus, gasta os Pontos de Magia necessários e então realiza um teste de Artes. Se passar no teste sua magia musical é efetiva (e poderá ser trocada durante as 3d6 rodadas em que o efeito está ativo), caso contrário seus Pontos de Magia são gastos e a magia se perde.",
+	special: ""
+)
+
+# Clérigo
+Kit.create(
+	name: "Clérigo",
+	cost: "4",
+	skill_points_cost: "200",
+	hero_points: "2 por nível",
+	faith_points: "5 + 1 por nível",
+	restrictions: "De acordo com a divindade escolhida",
+	skills: "Armas Brancas (Maça [DEX/DEX] 30/30, Cajado [DEX/DEX] 20/20); Ciências (Teologia [0] 40%); Conhecimento (ligado à área de atuação da sua divindade [0] 30%); Concentração 30%; Etiqueta [CAR] 30%; Primeiros Socorros [INT] 30%;",
+	improvements: "Pontos Heróicos 2, Pontos de Fé 4",
+	magic_points: "",
+	magic_path: "De acordo com a divindade escolhida Um Clérigo deve escolher uma divindade para ser seu Patrono. Veja regras para divindades adiante.",
+	special: ""
+)
+
+# Paladino
+Kit.create(
+	name: "Paladino",
+	cost: "5",
+	skill_points_cost: "300",
+	hero_points: "4 por nível",
+	faith_points: "3 + 1 por nível",
+	restrictions: "Consulte a descrição da divindade do personagem.",
+	skills: "Armas Brancas (Espada Longa/ Espada Bastarda/ Espada de Duas mãos [DEX/DEX] 40/40, Maça de Cavalaria [DEX/DEX] 30/20); Escudos [DEX] 20%; Ciências (Herbalismo [0] 30%, Teologia [0] 40%); Furtividade [AGI] 30%; Primeiros Socorros [INT] 30%; Etiqueta [CAR] 20%; Manipulação (Empatia [CAR] 30%, Liderança [CAR] 20%, Diplomacia 20%).",
+	improvements: "Pontos Heróicos 4, Pontos de Fé 3, Montaria Especial",
+	magic_points: "",
+	magic_path: "",
+	special: "Luz e Água. O Paladino não pode gastar seus Pontos de Focus em nenhum outro Caminho. O Paladino ganha o serviço de um cavalo de inteligência, força e lealdade incomuns para servi-lo na sua cruzada contra o mal. Esta montaria costuma ser um cavalo de batalha pesado. Veja regras para Montaria de Paladino adiante. Um Paladino deve escolher uma divindade para ser seu Patrono. Veja regras para Divindades adiante. Um Paladino perde todas as habilidades de Classe se vier a cometer um ato maligno por vontade própria. Além disso, o código de um Paladino requer que ele respeite autoridades legítimas, aja com honra (não mentir, não trapacear, não usar veneno, e daí por diante), ajudar os necessitados (desde que não usem a ajuda para fins maus ou caóticos), e punir aqueles que ameaçarem inocentes. Um Paladino jamais se associará conscientemente a personagens malignos, nem continuará associado a alguém que consistentemente ofender seu código moral. Um Paladino só pode aceitar empregados, seguidores e companheiros que sejam leais e bons."
+)
+
+# Druida
+Kit.create(
+	name: "Druida",
+	cost: "4",
+	skill_points_cost: "250",
+	hero_points: "3 por nível",
+	faith_points: "3 + 1 por nível",
+	restrictions: "Nenhuma",
+	skills: "Armas Brancas (Bastão [DEX/DEX] 30/20); Esquiva [AGI] 20%; Animais (Empatia com Animais [INT] 20%, Tratamento de Animais [Primeiros Socorros] 20%, Doma [0] 20%); Caça [PER] 20%; Camuflagem [PER] 30%; Ciências (Religião [0] 30%, Herbalismo [0] 30%, Metereologia [0] 10%); Esportes (Escalada [AGI] 10%, Natação [AGI] 20%, Corrida [CON] 10%); Furtividade [AGI] 20%; Primeiros Socorros [INT] 20%; Rastreio [PER] 10%; Sobrevivência (Florestas [PER] 30%).",
+	improvements: "Pontos Heróicos 3, Pontos de Fé 3, Companheiro Animal",
+	magic_points: "",
+	magic_path: "Fogo, Água, Ar, Terra, Plantas e Animais. O Druida não pode gastar seus Pontos de Fé em nenhum outro caminho. Um druida começa automaticamente sabendo falar com 30% o silvestre, idioma das criaturas da floresta. Um druida também sabe Druídico, um língua secreta conhecida apenas por Druidas, o qual aprende ao se tornar um druida nível 1. O druida começa com Drúidico 50% e ganha +10% a cada novo nível que alcança nesta Classe. Druidas são proibidos de ensinar este língua a não-Druidas. Druídico tem seu próprio alfabeto. Druidas são proibidos de usar armas e armaduras de metal. Um druida que vestir uma armadura proibida ou usar uma arma proibida perde a capacidade de usar magias e de usar qualquer de suas habilidades de Classe enquanto o fizer e por 24 horas daí em diante.",
+	special: ""
+)
+
+# Feiticeiro
+Kit.create(
+	name: "Feiticeiro",
+	cost: "2",
+	skill_points_cost: "150",
+	hero_points: "1 por nível",
+	faith_points: "0",
+	restrictions: "Nenhuma",
+	skills: "Armas Brancas (Adaga [DEX/DEX] 10/ 10, Bastão [DEX/DEX] 10/ 10), Esquiva [AGI] 20%, Ciências Proibidas (Alquimia [0] 30%, Ocultismo [0] 20%, Rituais [0] 30%, Teoria da Magia [0] 30%); Concentração [WILL] 20%; Escutar [PER] 10%.",
+	improvements: "Pontos Heróicos 1, Poderes Mágicos 1, Familiar",
+	magic_points: "4 + 2 por nível",
+	magic_path: "Nenhum",
+	special: "Devido à sua natureza abundantemente mágica, um Feiticeiro começa o jogo com o dobro de Pontos de Magia que comumente ganharia pelo seu Aprimoramento Poderes Mágicos. Feiticeiros não aprendem Formas, ou seja, não podem gastar pontos de focus em Criar, Controlar e Entender. Os Feiticeiros não aprendem a lançar Magias, eles já nascem com elas. Por isso, mesmo que encontrem uma nova Magia em algum livro, eles não poderão aprendê-las como fariam os Magos. Os Feiticeiros aprendem novas Magias a cada nível, e esta Magia sempre será aleatória. Eles não podem escolher que Magias desejam aprender, elas apenas surgem em sua mente."
+)
+
+
+
+
+
+

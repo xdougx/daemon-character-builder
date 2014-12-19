@@ -21,6 +21,14 @@
 	padding: 10px;
 }
 
+.vert_pad {
+	padding: 10px 0;
+}
+
+.not_pad {
+	padding: 0;
+}
+
 .box_elements_left {
 	text-align: center;
 	border: solid 1px #2F587B;
@@ -69,3 +77,19 @@
 .margin_top_3 {
 	margin-top: 30px;
 } 
+
+.strong {
+	font-weight: 600;
+}
+
+#show_character {
+	#character_infos {
+		p {
+			margin: 0;
+			span {
+				font-size: 18px;
+			}
+		}
+	}
+
+}

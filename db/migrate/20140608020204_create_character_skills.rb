@@ -3,8 +3,8 @@ class CreateCharacterSkills < ActiveRecord::Migration
     create_table :character_skills do |t|
       t.integer :skill_points
       t.integer :bonus
-      t.integer :player_id
       t.integer :skill_id
+      t.integer :character_id
 
       t.timestamps
     end

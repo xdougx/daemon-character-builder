@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  cost: 1
+  attrs: MyString
+  age: MyString
+  improvements: MyText
+  injuries: MyText
+
+two:
+  name: MyString
+  description: MyText
+  cost: 1
+  attrs: MyString
+  age: MyString
+  improvements: MyText
+  injuries: MyText

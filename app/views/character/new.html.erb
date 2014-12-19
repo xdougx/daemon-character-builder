@@ -1,5 +1,8 @@
 <div class="container">
-	<%= form_tag '/characters', role: 'form' do |f| %>
+	<%= form_tag '/character', role: 'form', id: 'form_character_create' do |f| %>
+    <div>
+      <h2 class="vert_pad">Criar Novo Personagem</h2>  
+    </div>
     <div id="helpers" role="tabpanel">
       <ul class="nav nav-tabs" role="tablist">
         <li role="presentation" class="active"><a href="#infos" aria-controls="infos" role="tab" data-toggle="tab">Infos</a></li>
@@ -32,12 +35,10 @@
         <div role="tabpanel" class="tab-pane" id="races">
           <%= render partial: 'races_guide'%>
         </div>
-        <div role="tabpanel" class="tab-pane" id="kits">...</div>
+        <div role="tabpanel" class="tab-pane" id="kits">
+          <%= render partial: 'character_kits'%>
+        </div>
       </div>
-    </div>
-
-    <div class="col-lg-12">
-      <h4>Criar Novo Personagem</h4>  
     </div>
     
     <div class="row">
@@ -54,12 +55,12 @@
 
             <div class="form-group">
               <label for="race">Raça</label>
-              <%= text_field_tag "character[race]", nil, class: "form-control", placeholder: "Elfo" %>
+              <%= race_select %>
             </div>
 
             <div class="form-group">
               <label for="class">Classe</label>
-              <%= text_field_tag "character[class]", nil, class: "form-control", placeholder: "Lutador" %>
+              <%= kit_select %>
             </div>
 
             <div class="form-group">
@@ -107,21 +108,21 @@
                 <div class="col-xs-4 col-md-4">
                   <div class="input-group">
                     <span class="input-group-addon">PO</span>
-                    <%= text_field_tag "character[gold]", nil, class: "form-control", placeholder: "Ouro" %>
+                    <%= text_field_tag "character[gold]", 0, class: "form-control", placeholder: "Ouro" %>
                   </div>
                 </div>
 
                 <div class="col-xs-4 col-md-4">
                   <div class="input-group">
                     <span class="input-group-addon">PP</span>
-                    <%= text_field_tag "character[silver]", nil, class: "form-control", placeholder: "Prata" %>
+                    <%= text_field_tag "character[silver]", 0, class: "form-control", placeholder: "Prata" %>
                   </div>
                 </div>
 
                 <div class="col-xs-4 col-md-4">
                   <div class="input-group">
                     <span class="input-group-addon">PC</span>
-                    <%= text_field_tag "character[cooper]", nil, class: "form-control", placeholder: "Cobre" %>
+                    <%= text_field_tag "character[cooper]", 0, class: "form-control", placeholder: "Cobre" %>
                   </div>
                   
                 </div>
@@ -135,21 +136,21 @@
                 <div class="col-xs-4 col-md-4">
                   <div class="input-group">
                     <span class="input-group-addon">PV</span>
-                    <%= text_field_tag "character[health_points]", nil, class: "form-control", placeholder: "Vida" %>
+                    <%= text_field_tag "character[health_points]", 0, class: "form-control", placeholder: "Vida" %>
                   </div>
                 </div>
 
                 <div class="col-xs-4 col-md-4">
                   <div class="input-group">
                     <span class="input-group-addon">IP</span>
-                    <%= text_field_tag "character[index_protection]", nil, class: "form-control", placeholder: "Proteção" %>
+                    <%= text_field_tag "character[index_protection]", 0, class: "form-control", placeholder: "Proteção" %>
                   </div>
                 </div>
 
                 <div class="col-xs-4 col-md-4">
                   <div class="input-group">
                     <span class="input-group-addon">PH</span>
-                    <%= text_field_tag "character[hero_points]", nil, class: "form-control", placeholder: "Heróicos" %>
+                    <%= text_field_tag "character[hero_points]", 0, class: "form-control", placeholder: "Heróicos" %>
                   </div>
                 </div>
               </div>
@@ -160,21 +161,21 @@
                 <div class="col-xs-4 col-md-4">
                   <div class="input-group">
                     <span class="input-group-addon">PM</span>
-                    <%= text_field_tag "character[magic_points]", nil, class: "form-control", placeholder: "Mana" %>
+                    <%= text_field_tag "character[magic_points]", 0, class: "form-control", placeholder: "Mana" %>
                   </div>
                 </div>
 
                 <div class="col-xs-4 col-md-4">
                   <div class="input-group">
                     <span class="input-group-addon">PF</span>
-                    <%= text_field_tag "character[focus_points]", nil, class: "form-control", placeholder: "Focus" %>
+                    <%= text_field_tag "character[focus_points]", 0, class: "form-control", placeholder: "Focus" %>
                   </div>
                 </div>
 
                 <div class="col-xs-4 col-md-4">
                   <div class="input-group">
                     <span class="input-group-addon">PdF</span>
-                    <%= text_field_tag "character[faith_point]", nil, class: "form-control", placeholder: "Fé" %>
+                    <%= text_field_tag "character[faith_points]", 0, class: "form-control", placeholder: "Fé" %>
                   </div>
                   
                 </div>
@@ -189,7 +190,7 @@
 
     <div class="row">
       <div class="col-lg-6">
-        <div class="panel panel-primary">
+        <div class="panel panel-primary" id="attributes">
           <div class="panel-heading">
             <h3 class="panel-title">Atributos (101)</h3>
           </div>
@@ -199,21 +200,21 @@
               <div class="col-xs-3 col-md-3 panel-title center">Modificador</div>
               <div class="col-xs-3 col-md-3 panel-title center">Total</div>
             </div>
-            <% Attribute::ATTRS.each_with_index do |attr, i| %>
+            <% Status::ATTRS.each_with_index do |attr, i| %>
               <div class="row row_pad" id="attr_<%= attr.first %>">
                 <div class="form-group">
                   <div class="col-xs-6 col-md-6">
                     <div class="input-group">
                       <span class="input-group-addon input-group-min"><%= attr.last %></span>
-                      <%= text_field_tag "character[attributes_char_attributes][#{attr.first}]", 0,  class: "form-control center", placeholder: "Base"%>
+                      <%= text_field_tag "character[status_attributes][#{attr.first}]", 0,  class: "form-control center", placeholder: "Base"%>
                     </div>
-                    
                   </div>
-                  <div class="col-xs-3 col-md-3 center" id="<%= attr.first %>_mod">-</div>
-                  <div class="col-xs-3 col-md-3 center" id="<%= attr.first %>_total">-</div>
+                  <div class="col-xs-3 col-md-3 center mod">-</div>
+                  <div class="col-xs-3 col-md-3 center total">-</div>
                 </div>
               </div> 
             <% end %>
+            <p class="center"><strong>Total Usado: <span id="total_attr">0</span></strong></p>
           </div>
         </div>
       </div>
@@ -248,7 +249,7 @@
                   <div class="col-xs-6 col-md-6 row_pad">
                     <div class="input-group">
                       <span class="input-group-addon input-group-max"><%= path.last %></span>
-                      <%= text_field_tag "character[magic_attributes][#{path.first}]", nil, class: "form-control" %>
+                      <%= text_field_tag "character[magic_attributes][#{path.first}]", 0, class: "form-control" %>
                     </div>
                     
                   </div>
@@ -281,7 +282,7 @@
                   <span class="improvement_name"></span>
                   <a class="remove_new_improvement" href="javascript:void(0)">remover</a>
                 </p>
-                <input type="hidden" class="improvement_id" name="character[improvements_attributes][0][improvement_id]">
+                <input type="hidden" class="improvement_id" name="character[improvements_attributes][0][improvement_id]" disabled>
               </div>
             </div>
 
@@ -311,7 +312,7 @@
                     <span class="injury_name"></span>
                     <a class="remove_new_injury" href="javascript:void(0)">remover</a>
                   </p>
-                  <input type="hidden" class="injury_id" name="character[injuries_attributes][0][injury_id]">
+                  <input type="hidden" class="injury_id" name="character[injuries_attributes][0][injury_id]" disabled>
                 </div>
 
               </div>
@@ -346,14 +347,14 @@
                   <p>
                     <span class="weapon_skill_name"></span>
                     <span class="input-group weapon_skill_atack_skill_points">
-                      <input type="text" class="form-control" size="2" name="character[weapon_skills_attributes][0][atack_skill_points]" placeholder="ATK">
+                      <input type="text" class="form-control" size="2" name="character[weapon_skills_attributes][0][atack_skill_points]" disabled placeholder="ATK">
                     </span>
                     <span class="input-group weapon_skill_defence_skill_points">
-                      <input type="text" class="form-control" size="2" name="character[weapon_skills_attributes][0][defence_skill_points]" placeholder="DEF">
+                      <input type="text" class="form-control" size="2" name="character[weapon_skills_attributes][0][defence_skill_points]" disabled placeholder="DEF">
                     </span>
                     <a class="remove_new_weapon_skill" href="javascript:void(0)">remover</a>
                   </p>
-                  <input type="hidden" class="weapon_skill_id" name="character[weapon_skills_attributes][0][weapon_skill_id]">
+                  <input type="hidden" class="weapon_skill_id" name="character[weapon_skills_attributes][0][weapon_skill_id]" disabled>
                 </div>
 
               </div>
@@ -384,11 +385,11 @@
                   <p>
                     <span class="skill_name"></span>
                     <span class="input-group skill_skill_points">
-                      <input type="text" class="form-control" size="2" name="character[skills_attributes][0][skill_points]" placeholder="Pontos">
+                      <input type="text" class="form-control" size="2" name="character[skills_attributes][0][skill_points]" disabled placeholder="Pontos">
                     </span>
                     <a class="remove_new_skill" href="javascript:void(0)">remover</a>
                   </p>
-                  <input type="hidden" class="skill_id" name="character[weapon_skills_attributes][0][skill_id]">
+                  <input type="hidden" class="skill_id" name="character[skills_attributes][0][skill_id]" disabled>
                 </div>
 
               </div>
@@ -411,10 +412,11 @@
             <h3 class="panel-title">História</h3>
           </div>
           <div class="panel-body">
-            <textarea name="character[hiostory]" id="history" style="height: 100%;"></textarea>
+            <textarea name="character[history]" id="history" style="height: 100%;"></textarea>
           </div>
         </div>
       </div>
+      <div class="center"><input type="submit" class="btn btn-primary" value="Criar Personagem"></div>
     </div>
   <% end %>
 </div>
